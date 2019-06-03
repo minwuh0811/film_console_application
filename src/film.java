@@ -3,6 +3,10 @@ public class film {
     private String filmID;
     private String name;
     private int limitofage;
+    public static final long serialVersionUID = 3L;
+
+    public film() {
+    }
 
     public film(String name, int limitofage) {
         ID+=1;
