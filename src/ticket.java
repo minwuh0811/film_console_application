@@ -4,14 +4,23 @@ public class ticket {
     private film film;
     private double price;
     private int numberOfTicket;
-    private static int TotalofTicket;
+    static int TotalofTicket;
+    public static final long serialVersionUID = 2L;
 
-    public ticket(String ticketID, film film, double price, int numberOfTicket) {
+
+    public ticket(film film, double price, int numberOfTicket) {
         ID+=1;
         this.ticketID="TK"+ID;
         this.film=film;
         this.price=price;
-        this.TotalofTicket-=numberOfTicket;
+        TotalofTicket-=numberOfTicket;
+    }
+
+    public ticket(String ticketID, film film, double price, int totalofTicket) {
+        this.ticketID=ticketID;
+        this.film=film;
+        this.price=price;
+        TotalofTicket=totalofTicket;
     }
 
     public String getTicketID() {
@@ -44,14 +53,6 @@ public class ticket {
 
     public void setNumberOfTicket(int numberOfTicket) {
         this.numberOfTicket = numberOfTicket;
-    }
-
-    public static int getTotalofTicket() {
-        return TotalofTicket;
-    }
-
-    public static void setTotalofTicket(int totalofTicket) {
-        ticket.TotalofTicket = totalofTicket;
     }
 
 }
