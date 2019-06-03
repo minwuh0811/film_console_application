@@ -1,9 +1,12 @@
-public class Administrator {
+import java.io.Serializable;
+
+public class Administrator implements Serializable {
     private String Firstname;
     private String Lastname;
     private String AdministratorName;
     private String password;
     private String AdministratorID;
+    public static final long serialVersionUID = 1L;
     private static int ID;
 
     public Administrator(String Firstname,String Lastname, String AdministratorName, String password) {
@@ -58,5 +61,13 @@ public class Administrator {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public static int getID() {
+        return ID;
+    }
+
+    public static void setID(int ID) {
+        Administrator.ID = ID;
     }
 }
