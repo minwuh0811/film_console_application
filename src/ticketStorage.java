@@ -56,7 +56,6 @@ public class ticketStorage {
         }
     }
 
-
     private void LoadTicketFile(String file_name, String path) {
         String file = file_name + ".bin";
         path = path + java.io.File.separator + file;
@@ -94,14 +93,6 @@ public class ticketStorage {
 
     public void addTicketDBSQL(ticket ticket) {
         ticketlist.add(ticket);
-    }
-
-
-
-    public void addTicket(ticket ticket) {
-        ticketlist.add(ticket);
-        saveToTicketFile(file_name,path);
-        close(file_name,path);
     }
 
     public void removeTicket(ticket ticket) {
