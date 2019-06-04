@@ -17,9 +17,6 @@ public class MainTest {
     void localDataSize(){
         Main.localData(DBURL,DBUser,DBPassword,path);
 
-
-
-
     }
 
 }
