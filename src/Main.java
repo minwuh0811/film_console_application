@@ -68,15 +68,16 @@ public class Main {
                                         String AgeLimitation = JOptionPane.showInputDialog("What is the AgeLimitation:");
                                         int ageLimitation = Integer.parseInt(AgeLimitation);
                                         film newFilm = new film(FilmName, ageLimitation);
-                                        filmStorageBin.addfilm(newFilm);
+                                        filmStorageBin.addFilmDBSQL(newFilm);
+                                        filmStorageBin.close(fileNameFilm,path);
                                         insertSQLDataFilm(newFilm);
                                         String NumberOfticket = JOptionPane.showInputDialog("What is the number of tickets?");
                                         int numberOfTicket=Integer.parseInt(NumberOfticket);
-                                        System.out.println(numberOfTicket);
                                         String price=JOptionPane.showInputDialog("What is the price?");
                                         double PRICE= Double.parseDouble(price);
                                         ticket newticket=new ticket(newFilm,PRICE, numberOfTicket);
-                                        ticketStorageBin.addTicket(newticket);
+                                        ticketStorageBin.addTicketDBSQL(newticket);
+                                        ticketStorageBin.close(fileNameTicket,path);
                                         insertSQLDataTicket(newticket);
                                         break;
                                     case (2):
@@ -89,8 +90,10 @@ public class Main {
                                             int confirmation_choice = Integer.parseInt(confirmation);
                                             if (confirmation_choice == 1) {
                                                 filmStorageBin.removefilm(filmStorageBin.getFilm());
+                                                filmStorageBin.close(fileNameFilm,path);
                                                 removeSQLDataFilm(filmStorageBin.getFilm());
                                                 ticketStorageBin.removeTicket(ticketStorageBin.getTicket());
+                                                ticketStorageBin.close(fileNameTicket,path);
                                                 removeSQLDataTicket(ticketStorageBin.getTicket());
                                             } else if (confirmation_choice == 0) {
                                                 String delete_film = JOptionPane.showInputDialog("Cancel remove film? 1: Yes 0: No");

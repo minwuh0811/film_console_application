@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7835741-caab-4645-ac79-a232f2928cca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/FilmStorageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FilmStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FilmStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ticketStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ticketStorage.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -74,11 +74,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-238">
-              <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
+            <state relative-caret-position="1615">
+              <caret line="95" column="90" selection-start-line="95" selection-start-column="90" selection-end-line="95" selection-end-column="90" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#15755#15756#0" expanded="true" />
@@ -91,8 +91,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FilmStorage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="106" lean-forward="true" selection-start-line="106" selection-end-line="106" />
+            <state relative-caret-position="114">
+              <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#FilmStorage#0;class#FilmStorage#0" />
@@ -100,26 +100,37 @@
                 <element signature="method#saveToFilmFile#0;class#FilmStorage#0" />
                 <element signature="method#LoadFilmFile#0;class#FilmStorage#0" />
                 <element signature="method#close#0;class#FilmStorage#0" />
-                <element signature="method#removefilm#0;class#FilmStorage#0" />
+                <element signature="e#2694#2695#0" expanded="true" />
+                <element signature="e#2731#2732#0" expanded="true" />
                 <element signature="method#searchFilm#0;class#FilmStorage#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ticketStorage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
+            <state relative-caret-position="210">
+              <caret line="98" column="34" selection-start-line="98" selection-start-column="34" selection-end-line="98" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#saveToTicketFile#0;class#ticketStorage#0" />
                 <element signature="method#LoadTicketFile#0;class#ticketStorage#0" />
                 <element signature="method#searchTicket#0;class#ticketStorage#0" />
                 <element signature="method#close#0;class#ticketStorage#0" />
-                <element signature="method#removeTicket#0;class#ticketStorage#0" />
+                <element signature="e#3226#3227#0" expanded="true" />
+                <element signature="e#3267#3268#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/ticketStorageTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -127,8 +138,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/FilmStorageTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+            <state relative-caret-position="170">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -141,15 +152,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Repository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="17" selection-start-column="17" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -237,12 +239,13 @@
         <option value="$PROJECT_DIR$/test/Resources/Administrator.txt" />
         <option value="$PROJECT_DIR$/src/AdministratorStorage.java" />
         <option value="$PROJECT_DIR$/src/AdministratorInterface.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/test/AdministratorStorageTest.java" />
         <option value="$PROJECT_DIR$/test/MainTest.java" />
         <option value="$PROJECT_DIR$/test/FilmStorageTest.java" />
+        <option value="$PROJECT_DIR$/test/ticketStorageTest.java" />
         <option value="$PROJECT_DIR$/src/FilmStorage.java" />
         <option value="$PROJECT_DIR$/src/ticketStorage.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
@@ -336,7 +339,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AdministratorStorageTest">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="film_konsollapplikation" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AdministratorStorageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="film_konsollapplikation" />
       <option name="PACKAGE_NAME" value="" />
@@ -376,22 +386,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="film_konsollapplikation" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MainTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.AdministratorStorageTest" />
         <item itemvalue="JUnit.AdministratorStorageTest.addAdministratorSQLDB" />
         <item itemvalue="JUnit.AdministratorStorageTest.close" />
         <item itemvalue="JUnit.AdministratorStorageTest.addAdministrator" />
-        <item itemvalue="JUnit.MainTest" />
       </list>
     </recent_temporary>
   </component>
@@ -407,7 +408,7 @@
       <updated>1559545679525</updated>
       <workItem from="1559545682576" duration="33983000" />
       <workItem from="1559644360247" duration="19314000" />
-      <workItem from="1559676708853" duration="6387000" />
+      <workItem from="1559676708853" duration="7325000" />
     </task>
     <task id="LOCAL-00001" summary="Add Administrator, Administrator login, Administrator Add New Ticket.">
       <created>1559595141022</created>
@@ -507,7 +508,35 @@
       <option name="project" value="LOCAL" />
       <updated>1559683326315</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="updated FilmStorage class remove duplicated method">
+      <created>1559683707536</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1559683707536</updated>
+    </task>
+    <task id="LOCAL-00016" summary="updated ticketStorage class by removing duplicated method">
+      <created>1559683761332</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1559683761332</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Create UnitTests for FilmStorage class">
+      <created>1559683805131</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1559683805131</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Create UnitTests for ticketStorage class">
+      <created>1559683872952</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1559683872952</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -543,7 +572,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59684000" />
+    <option name="totallyTimeSpent" value="60622000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -552,7 +581,7 @@
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Learn" order="2" weight="0.32955465" />
-      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.33684212" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.15384616" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="0" />
@@ -569,8 +598,8 @@
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="13" />
-      <window_info anchor="right" id="Coverage" side_tool="true" visible="true" weight="0.109311745" />
-      <window_info anchor="right" id="Database" order="0" weight="0.2291498" />
+      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.109311745" />
+      <window_info anchor="right" id="Database" order="0" visible="true" weight="0.18704453" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info anchor="right" id="Maven" order="2" />
       <window_info anchor="right" id="Palette" order="3" />
@@ -627,7 +656,11 @@
     <MESSAGE value="create binary and TXT files to test addAdministrator method in AdministratorStorage class" />
     <MESSAGE value="do unit tests for public methods in AdministratorStorage class" />
     <MESSAGE value="create UnitTest to test data loading from DATEBASE" />
-    <option name="LAST_COMMIT_MESSAGE" value="create UnitTest to test data loading from DATEBASE" />
+    <MESSAGE value="updated FilmStorage class remove duplicated method" />
+    <MESSAGE value="updated ticketStorage class by removing duplicated method" />
+    <MESSAGE value="Create UnitTests for FilmStorage class" />
+    <MESSAGE value="Create UnitTests for ticketStorage class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create UnitTests for ticketStorage class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -646,7 +679,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/FilmStorage.java</url>
-          <line>96</line>
+          <line>94</line>
           <properties class="FilmStorage" method="searchFilm">
             <option name="EMULATED" value="true" />
           </properties>
@@ -906,29 +939,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/test/FilmStorageTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-238">
-          <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#15755#15756#0" expanded="true" />
-            <element signature="e#15793#15794#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="170">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/FilmStorageTest.java">
+    <entry file="file://$PROJECT_DIR$/test/ticketStorageTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ticketStorage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="98" column="34" selection-start-line="98" selection-start-column="34" selection-end-line="98" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#saveToTicketFile#0;class#ticketStorage#0" />
+            <element signature="method#LoadTicketFile#0;class#ticketStorage#0" />
+            <element signature="method#searchTicket#0;class#ticketStorage#0" />
+            <element signature="method#close#0;class#ticketStorage#0" />
+            <element signature="e#3226#3227#0" expanded="true" />
+            <element signature="e#3267#3268#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FilmStorage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="106" lean-forward="true" selection-start-line="106" selection-end-line="106" />
+        <state relative-caret-position="114">
+          <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#FilmStorage#0;class#FilmStorage#0" />
@@ -936,23 +980,21 @@
             <element signature="method#saveToFilmFile#0;class#FilmStorage#0" />
             <element signature="method#LoadFilmFile#0;class#FilmStorage#0" />
             <element signature="method#close#0;class#FilmStorage#0" />
-            <element signature="method#removefilm#0;class#FilmStorage#0" />
+            <element signature="e#2694#2695#0" expanded="true" />
+            <element signature="e#2731#2732#0" expanded="true" />
             <element signature="method#searchFilm#0;class#FilmStorage#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ticketStorage.java">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
+        <state relative-caret-position="1615">
+          <caret line="95" column="90" selection-start-line="95" selection-start-column="90" selection-end-line="95" selection-end-column="90" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#saveToTicketFile#0;class#ticketStorage#0" />
-            <element signature="method#LoadTicketFile#0;class#ticketStorage#0" />
-            <element signature="method#searchTicket#0;class#ticketStorage#0" />
-            <element signature="method#close#0;class#ticketStorage#0" />
-            <element signature="method#removeTicket#0;class#ticketStorage#0" />
+            <element signature="e#15755#15756#0" expanded="true" />
+            <element signature="e#15793#15794#0" expanded="true" />
           </folding>
         </state>
       </provider>
