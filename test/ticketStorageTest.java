@@ -2,25 +2,21 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class FilmStorageTest {
+class ticketStorageTest {
+
+    @Test
+    void searchTicket() {
+    }
 
     @Test
     void close() {
     }
 
     @Test
-    void addfilm() {
+    void addTicketDBSQL() {
     }
 
     @Test
-    void removefilm() {
-    }
-
-    @Test
-    void addFilmDBSQL() {
-    }
-
-    @Test
-    void searchFilm() {
+    void removeTicket() {
     }
 }
