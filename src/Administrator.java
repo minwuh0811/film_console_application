@@ -9,6 +9,8 @@ public class Administrator implements Serializable {
     public static final long serialVersionUID = 1L;
     private static int ID;
 
+    public Administrator(){}
+
     public Administrator(String Firstname,String Lastname, String AdministratorName, String password) {
         ID+=1;
         this.AdministratorID="AD"+ ID;

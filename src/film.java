@@ -1,9 +1,11 @@
-public class film {
+import java.io.Serializable;
+
+public class film implements Serializable {
     private static int ID;
     private String filmID;
     private String name;
     private int limitofage;
-    public static final long serialVersionUID = 3L;
+    public static final long serialVersionUID = 2L;
 
     public film() {
     }

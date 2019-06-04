@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 
 public interface AdministratorInterface {
-    public ArrayList<Administrator> getAdministratorlist();
-    public void addAdministrator(Administrator administrator);
-
-
+    void addAdministratorSQLDB(Administrator administrator);
+    void close(String file_name,String path);
 }

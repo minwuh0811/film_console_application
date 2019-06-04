@@ -17,6 +17,9 @@ public class AdministratorStorage implements AdministratorInterface {
         LoadAdminFile(file_name,path);
     }
 
+    public ArrayList<Administrator> getAdministratorlist() {
+        return administratorlist;
+    }
 
     private void saveToAdminFile(String file_name, String path) {
         String file1=file_name+".bin";
@@ -51,7 +54,6 @@ public class AdministratorStorage implements AdministratorInterface {
         }
     }
 
-
     private void LoadAdminFile(String file_name, String path) {
         String file = file_name + ".bin";
         path = path + java.io.File.separator + file;
@@ -67,33 +69,20 @@ public class AdministratorStorage implements AdministratorInterface {
 
         }
         try {
-            Administrator.setID(administratorlist.size());
+            Administrator.setID(administratorlist.size()+1);
         } catch ( java.lang.IndexOutOfBoundsException e){
             Administrator.setID(0);
         }
 
     }
 
-
-    private void close(){
+    public void close(String file_name,String path){
         saveToAdminFile(file_name,path);
 //        saveToOrderSearchFile();
     }
 
-
-
-    public ArrayList<Administrator> getAdministratorlist() {
-        return administratorlist;
-    }
     public void addAdministratorSQLDB(Administrator administrator) {
         administratorlist.add(administrator);
     }
-
-    public void addAdministrator(Administrator administrator) {
-        administratorlist.add(administrator);
-        saveToAdminFile(file_name,path);
-        close();
-    }
-
 
 }

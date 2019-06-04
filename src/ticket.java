@@ -1,19 +1,25 @@
-public class ticket {
+import java.io.Serializable;
+
+public class ticket implements Serializable {
     private static int ID;
     private String ticketID;
     private film film;
     private double price;
     private int numberOfTicket;
     static int TotalofTicket;
-    public static final long serialVersionUID = 2L;
+    public static final long serialVersionUID = 3L;
 
+    public ticket(film film, int numberOfTicket){
+        this.film=film;
+        TotalofTicket-=numberOfTicket;
+    }
 
-    public ticket(film film, double price, int numberOfTicket) {
+    public ticket(film film, double price, int totalofTicket) {
         ID+=1;
         this.ticketID="TK"+ID;
         this.film=film;
         this.price=price;
-        TotalofTicket-=numberOfTicket;
+        TotalofTicket=totalofTicket;
     }
 
     public ticket(String ticketID, film film, double price, int totalofTicket) {

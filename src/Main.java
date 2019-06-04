@@ -11,26 +11,31 @@ public class Main {
     static ResultSet resultSetAdmin;
     static ResultSet resultSetFilm;
     static ResultSet resultSetTicket;
-    static String DBUserName = "root";
-    static String DBPassword = "password";
-    static String DBMySQLUrl="jdbc:mysql://192.168.99.100:3306/db_film";
     static String administratorDBTable = "admin";
     static String filmDBTable = "film";
     static String ticketDBTable = "ticket";
     static JTable table;// 声明表格
-    static String path = System.getProperty("user.home")
-            + java.io.File.separator + "IdeaProjects"
-            + java.io.File.separator + "film_konsollapplikation"
-            + java.io.File.separator + "src";
+    static String DBMySQLUrl = "jdbc:mysql://192.168.99.100:3306/db_film";
+    static String DBUserName = "root" ;
+    static String DBPassword = "password";
+    static String fileNameAdmin="Administrator";
+    static String fileNameFilm="Film";
+    static String fileNameTicket="Ticket";
+
+
 
 
     public static void main(String[] args) {
+        String path = System.getProperty("user.home")
+                + java.io.File.separator + "IdeaProjects"
+                + java.io.File.separator + "film_konsollapplikation"
+                + java.io.File.separator + "src";
 
         AdministratorStorage administratorStorageBin = new AdministratorStorage("Administrator", path);
         FilmStorage filmStorageBin=new FilmStorage("Film",path);
         ticketStorage ticketStorageBin=new ticketStorage("Ticket",path);
 
-        localData();
+        localData(DBMySQLUrl,DBUserName,DBPassword,path);
         String string = JOptionPane.showInputDialog("Administrator Press 1\nUser Press 2\nExit Press 3");
         int choice = Integer.parseInt(string);
         boolean control=true;
@@ -46,7 +51,8 @@ public class Main {
                             String AdministratorNickName = JOptionPane.showInputDialog("Enter Your Nick Name:");
                             String AdminPassword = JOptionPane.showInputDialog("Enter Your Password");
                             Administrator administratorNew = new Administrator(FirstName, LastName, AdministratorNickName, AdminPassword);
-//                            administratorStorageBin.addAdministrator(administratorNew);
+                            administratorStorageBin.addAdministratorSQLDB(administratorNew);
+                            administratorStorageBin.close(fileNameAdmin, path);
                             insertSQLDataAdmin(administratorNew);
                             break;
                         case (2):
@@ -135,7 +141,8 @@ public class Main {
         }
     }
 
-    public static void localData() {
+    public static ArrayList localData(String DBMySQLUrl,String DBUserName, String DBPassword,String path) {
+        ArrayList database=new ArrayList();
         try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 connection = DriverManager.getConnection(DBMySQLUrl, DBUserName, DBPassword);
@@ -146,8 +153,8 @@ public class Main {
                 Administrator administrator = new Administrator(resultSetAdmin.getString(1), resultSetAdmin.getString(2), resultSetAdmin.getString(3), resultSetAdmin.getString(4), resultSetAdmin.getString(5));
                 administratorstorageSQL.addAdministratorSQLDB(administrator);
                 administratorstorageSQL.close("Administrator", path);
-
             }
+            database.add(administratorstorageSQL);
             resultSetFilm = statement.executeQuery("select * from " + filmDBTable + ";");
             FilmStorage filmstorageSQL=new FilmStorage();
             while (resultSetFilm.next()) {
@@ -155,6 +162,7 @@ public class Main {
                 filmstorageSQL.addFilmDBSQL(film);
                 filmstorageSQL.close("Film",path);
             }
+            database.add(filmstorageSQL);
             resultSetTicket = statement.executeQuery("select * from " + ticketDBTable + ";");
             ticketStorage ticketstorageSQL=new ticketStorage();
             while (resultSetTicket.next()) {
@@ -163,10 +171,15 @@ public class Main {
                 ticket newTicket = new ticket(resultSetTicket.getString(1), filmstorageSQL.getFilm(), resultSetTicket.getDouble(3), resultSetTicket.getInt(4));
                 ticketstorageSQL.addTicketDBSQL(newTicket);
                 ticketstorageSQL.close("Ticket",path);
+
             }
+            database.add(ticketstorageSQL);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
+        return database;
+
+
     }
 
     public static void insertSQLDataAdmin(Administrator administrator){
