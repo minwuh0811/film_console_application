@@ -18,15 +18,17 @@ public class Main {
     static String filmDBTable = "film";
     static String ticketDBTable = "ticket";
     static JTable table;// 声明表格
+    static String path = System.getProperty("user.home")
+            + java.io.File.separator + "IdeaProjects"
+            + java.io.File.separator + "film_konsollapplikation"
+            + java.io.File.separator + "src";
 
 
     public static void main(String[] args) {
-        String path = System.getProperty("user.home")
-                + java.io.File.separator + "IdeaProjects"
-                + java.io.File.separator + "film_konsollapplikation"
-                + java.io.File.separator + "src";
+
         AdministratorStorage administratorStorageBin = new AdministratorStorage("Administrator", path);
         FilmStorage filmStorageBin=new FilmStorage("Film",path);
+        ticketStorage ticketStorageBin=new ticketStorage("Ticket",path);
 
         localData();
         String string = JOptionPane.showInputDialog("Administrator Press 1\nUser Press 2\nExit Press 3");
@@ -44,7 +46,7 @@ public class Main {
                             String AdministratorNickName = JOptionPane.showInputDialog("Enter Your Nick Name:");
                             String AdminPassword = JOptionPane.showInputDialog("Enter Your Password");
                             Administrator administratorNew = new Administrator(FirstName, LastName, AdministratorNickName, AdminPassword);
-                            administratorStorageBin.addAdministrator(administratorNew);
+//                            administratorStorageBin.addAdministrator(administratorNew);
                             insertSQLDataAdmin(administratorNew);
                             break;
                         case (2):
@@ -62,7 +64,44 @@ public class Main {
                                         film newFilm = new film(FilmName, ageLimitation);
                                         filmStorageBin.addfilm(newFilm);
                                         insertSQLDataFilm(newFilm);
+                                        String NumberOfticket = JOptionPane.showInputDialog("What is the number of tickets?");
+                                        int numberOfTicket=Integer.parseInt(NumberOfticket);
+                                        System.out.println(numberOfTicket);
+                                        String price=JOptionPane.showInputDialog("What is the price?");
+                                        double PRICE= Double.parseDouble(price);
+                                        ticket newticket=new ticket(newFilm,PRICE, numberOfTicket);
+                                        ticketStorageBin.addTicket(newticket);
+                                        insertSQLDataTicket(newticket);
                                         break;
+                                    case (2):
+                                        control=true;
+                                        while (control) {
+                                            String FilmID = JOptionPane.showInputDialog("Enter the filmID which you want to remove");
+                                            filmStorageBin.searchFilm(FilmID, filmStorageBin.getFilmlist());
+                                            ticketStorageBin.searchTicket(FilmID,ticketStorageBin.getTicketlist());
+                                            String confirmation = JOptionPane.showInputDialog(("Is the film \"" + filmStorageBin.getFilm().getName()) + "\" you want to delete? 1: Yes, 0: No");
+                                            int confirmation_choice = Integer.parseInt(confirmation);
+                                            if (confirmation_choice == 1) {
+                                                filmStorageBin.removefilm(filmStorageBin.getFilm());
+                                                removeSQLDataFilm(filmStorageBin.getFilm());
+                                                ticketStorageBin.removeTicket(ticketStorageBin.getTicket());
+                                                removeSQLDataTicket(ticketStorageBin.getTicket());
+                                            } else if (confirmation_choice == 0) {
+                                                String delete_film = JOptionPane.showInputDialog("Cancel remove film? 1: Yes 0: No");
+                                                int delete_film_choice=Integer.parseInt(delete_film);
+                                                if (delete_film_choice==1) {
+                                                    control=false;
+                                                }
+                                            }
+                                        }
+                                        break;
+                                    case (3):
+                                        String FilmID = JOptionPane.showInputDialog("Enter the filmID which you want to change the number of tickets in the storage");
+                                        ticketStorageBin.searchTicket(FilmID, ticketStorageBin.getTicketlist());
+                                        String totalTicket=JOptionPane.showInputDialog( "FilmID: " +ticketStorageBin.getTicket().getFilm().getFilmID() + " FilmName: " + ticketStorageBin.getTicket().getFilm().getName()+ " has " + ticketStorageBin.getTicket().TotalofTicket + " tickets left.\nThe number of the tickets?");
+                                        int totalNumberTicket=Integer.parseInt(totalTicket);
+                                        ticketStorageBin.getTicket().TotalofTicket=totalNumberTicket;
+                                        JOptionPane.showMessageDialog(null,"FilmID: " +ticketStorageBin.getTicket().getFilm().getFilmID() + " FilmName: " + ticketStorageBin.getTicket().getFilm().getName()+ " has " + ticketStorageBin.getTicket().TotalofTicket + " tickets left now.");
                                     case(4):
                                         JOptionPane.showMessageDialog(null, "Exist");
                                         break;
@@ -103,24 +142,27 @@ public class Main {
                 statement = connection.createStatement();
                 resultSetAdmin = statement.executeQuery("select * from " + administratorDBTable + ";");
                 AdministratorStorage administratorstorageSQL=new AdministratorStorage();
-                int n=0;
             while (resultSetAdmin.next()) {
                 Administrator administrator = new Administrator(resultSetAdmin.getString(1), resultSetAdmin.getString(2), resultSetAdmin.getString(3), resultSetAdmin.getString(4), resultSetAdmin.getString(5));
                 administratorstorageSQL.addAdministratorSQLDB(administrator);
+                administratorstorageSQL.close("Administrator", path);
+
             }
             resultSetFilm = statement.executeQuery("select * from " + filmDBTable + ";");
             FilmStorage filmstorageSQL=new FilmStorage();
             while (resultSetFilm.next()) {
                 film film = new film(resultSetFilm.getString(1), resultSetFilm.getString(2), resultSetFilm.getInt(3));
                 filmstorageSQL.addFilmDBSQL(film);
+                filmstorageSQL.close("Film",path);
             }
             resultSetTicket = statement.executeQuery("select * from " + ticketDBTable + ";");
             ticketStorage ticketstorageSQL=new ticketStorage();
             while (resultSetTicket.next()) {
                 String filmID = resultSetTicket.getString(2);
                 filmstorageSQL.searchFilm(filmID,filmstorageSQL.getFilmlist());
-                ticket ticket = new ticket(resultSetTicket.getString(1), filmCurrent, resultSetTicket.getDouble(3), resultSetTicket.getInt(4));
-                ticketstorageSQL.addTicket(ticket);
+                ticket newTicket = new ticket(resultSetTicket.getString(1), filmstorageSQL.getFilm(), resultSetTicket.getDouble(3), resultSetTicket.getInt(4));
+                ticketstorageSQL.addTicketDBSQL(newTicket);
+                ticketstorageSQL.close("Ticket",path);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
@@ -140,6 +182,19 @@ public class Main {
         }
     }
 
+    public static void removeSQLDataAdmin(Administrator administrator) {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection(DBMySQLUrl, DBUserName, DBPassword);
+            statement = connection.createStatement();
+            String string= String.format("DELETE FROM " + administratorDBTable +
+                    " WHERE administratorID=\'" + administrator.getAdministratorID() + "\';");
+            statement.execute(string);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,e);
+        }
+        }
+
     public static void insertSQLDataFilm(film film){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -147,6 +202,18 @@ public class Main {
             statement = connection.createStatement();
             String string= String.format("INSERT INTO " + filmDBTable +
                     " VALUES(\"%s\",\"%s\",\"%d\");",film.getFilmID(), film.getName(), film.getLimitofage());
+            statement.execute(string);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }
+    public static void removeSQLDataFilm(film film) {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection(DBMySQLUrl, DBUserName, DBPassword);
+            statement = connection.createStatement();
+            String string= String.format("DELETE FROM " + filmDBTable +
+                    " WHERE filmID=\'" + film.getFilmID() + "\';");
             statement.execute(string);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,e);
@@ -165,6 +232,20 @@ public class Main {
             JOptionPane.showMessageDialog(null,e);
         }
     }
+
+    public static void removeSQLDataTicket(ticket ticket) {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection(DBMySQLUrl, DBUserName, DBPassword);
+            statement = connection.createStatement();
+            String string= String.format("DELETE FROM " + ticketDBTable +
+                    " WHERE ticketID=\'" + ticket.getTicketID() + "\';");
+            statement.execute(string);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }
+
     private static boolean login(ArrayList<Administrator> administratorslist,String login, String password){
         int length=administratorslist.size();
         for (int i=0; i<length; i++) {
