@@ -21,7 +21,6 @@ public class  FilmStorage {
         return film;
     }
 
-
     private void saveToFilmFile(String file_name, String path) {
         String file1=file_name+".bin";
         String path_bin = path + java.io.File.separator + file1;
@@ -54,7 +53,6 @@ public class  FilmStorage {
         }
     }
 
-
     private void LoadFilmFile(String file_name, String path) {
         String file = file_name + ".bin";
         path = path + java.io.File.separator + file;
@@ -77,20 +75,9 @@ public class  FilmStorage {
 
     }
 
-
     public void close(String file_name,String path){
         saveToFilmFile(file_name,path);
 //        saveToOrderSearchFile();
-    }
-
-
-
-
-
-    public void addfilm(film film) {
-        filmlist.add(film);
-        saveToFilmFile(file_name,path);
-        close(file_name,path);
     }
 
     public void removefilm(film film) {
@@ -106,6 +93,7 @@ public class  FilmStorage {
     public ArrayList<film> getFilmlist() {
         return filmlist;
     }
+
     public void searchFilm(String filmID, ArrayList<film> filmlist) {
         for (film film : filmlist) {
             if (film.getFilmID().equals(filmID)) {
