@@ -82,8 +82,6 @@ public class  FilmStorage {
 
     public void removefilm(film film) {
         filmlist.remove(film);
-        saveToFilmFile(file_name,path);
-        close(file_name,path);
     }
 
     public void addFilmDBSQL(film film) {

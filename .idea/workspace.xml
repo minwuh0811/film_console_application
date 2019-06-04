@@ -46,13 +46,6 @@
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="User Data Source - jdbc:mysql://192.168.99.100:3306/db_film" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="db_film: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="admin: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="User Data Source - jdbc:mysql://192.168.99.100:3306/filmTest" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>

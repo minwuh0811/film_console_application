@@ -97,8 +97,6 @@ public class ticketStorage {
 
     public void removeTicket(ticket ticket) {
         ticketlist.remove(ticket);
-        saveToTicketFile(file_name,path);
-        close(file_name,path);
     }
 }
 
