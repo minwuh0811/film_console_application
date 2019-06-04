@@ -34,6 +34,8 @@ class AdministratorStorageTest {
             verify(mock).write( "the expected text");
         } catch (IOException e) {
             e.printStackTrace();
+
+
         }
     }
 
