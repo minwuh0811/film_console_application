@@ -1,0 +1,12 @@
+2. SQL command Create Table
+CREATE DATABASE filmTest
+mysql -uroot -p filmTest
+CREATE TABLE film(filmID varchar(255) NOT NULL UNIQUE, filmName varchar(255), AgeLimitation int, PRIMARY KEY (filmID));
+CREATE TABLE admin(administratorID varchar(255) NOT NULL UNIQUE, administratorFirstName varchar(255), administratorLastName varchar(255), loginName varchar(255) NOT NULL UNIQUE, loginPassword varchar(255), PRIMARY KEY (administratorID));
+CREATE TABLE ticket(ticketID varchar(255) NOT NULL UNIQUE, filmID varchar(255), price double, totalTicket int, PRIMARY KEY (ticketID));
+
+3 Insert Data
+For Exampel:
+ INSERT INTO admin(administratorID,  administratorFirstName,  administratorLastName,  loginName, loginPassword) VALUE('AD1', 'Min', 'Wu', 'minwuh081', 'password');
+ INSERT INTO film(filmID, filmName, AgeLimitation) VALUE('FM1', 'Star War', '18');
+ INSERT INTO ticket(ticketID, filmID, price, totalTicket) VALUE('TK1', 'FM1', 105.8, 20);

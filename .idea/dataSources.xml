@@ -22,5 +22,12 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://192.168.99.100:3306/db_film</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="User Data Source - jdbc:mysql://192.168.99.100:3306/filmTest" uuid="65646587-bf2e-45a8-9d75-cf1d739828bb">
+      <driver-ref>java.sql.Driver</driver-ref>
+      <synchronize>true</synchronize>
+      <configured-by-url>true</configured-by-url>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://192.168.99.100:3306/filmTest</jdbc-url>
+    </data-source>
   </component>
 </project>
