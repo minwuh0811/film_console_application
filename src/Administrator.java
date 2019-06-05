@@ -12,8 +12,7 @@ public class Administrator implements Serializable {
     public Administrator(){}
 
     public Administrator(String Firstname,String Lastname, String AdministratorName, String password) {
-        ID+=1;
-        this.AdministratorID="AD"+ ID;
+        this.AdministratorID="AD"+ ID++;
         this.Firstname=Firstname;
         this.Lastname=Lastname;
         this.AdministratorName=AdministratorName;

@@ -37,12 +37,8 @@ public class AdministratorStorage implements AdministratorInterface {
                     + administratorlist.get(i).getAdministratorName() + ' '
                     + administratorlist.get(i).getPassword() +'\n';        }
 
-        try (FileWriter filewriter = new FileWriter(file)) {
-            Repository repository=new Repository_Class(filewriter);
-            Main.WriteTextFile(repository,text);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Repository_Class repository= new Repository_Class();
+        repository.SaveTofile(file,text);
 
         try (ObjectOutputStream out =
                      new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(file_Customer)))) {
@@ -68,12 +64,6 @@ public class AdministratorStorage implements AdministratorInterface {
         } catch (ClassNotFoundException e) {
 
         }
-        try {
-            Administrator.setID(administratorlist.size()+1);
-        } catch ( java.lang.IndexOutOfBoundsException e){
-            Administrator.setID(0);
-        }
-
     }
 
     public void close(String file_name,String path){
