@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7835741-caab-4645-ac79-a232f2928cca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/Repository_ClassTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Administrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Administrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AdministratorStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AdministratorStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Docker_file" beforeDir="false" afterPath="$PROJECT_DIR$/src/Docker_file" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FilmStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FilmStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository_Class.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository_Class.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/film.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ticket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ticketStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ticketStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/AdministratorStorageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AdministratorStorageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/FilmStorageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/FilmStorageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/MainTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -78,10 +71,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
+            <state relative-caret-position="1077">
               <caret line="80" column="82" selection-start-line="80" selection-start-column="82" selection-end-line="80" selection-end-column="82" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -143,11 +136,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Docker_file">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" selection-end-column="23" />
+            <state relative-caret-position="251">
+              <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -406,7 +399,7 @@
       <workItem from="1559545682576" duration="33983000" />
       <workItem from="1559644360247" duration="19314000" />
       <workItem from="1559676708853" duration="7325000" />
-      <workItem from="1559726142870" duration="14040000" />
+      <workItem from="1559726142870" duration="14340000" />
     </task>
     <task id="LOCAL-00001" summary="Add Administrator, Administrator login, Administrator Add New Ticket.">
       <created>1559595141022</created>
@@ -534,7 +527,21 @@
       <option name="project" value="LOCAL" />
       <updated>1559683872952</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="debugged to add a new administrator">
+      <created>1559741050587</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1559741050587</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Set static ID after data loaded">
+      <created>1559741202522</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1559741202522</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -570,7 +577,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74662000" />
+    <option name="totallyTimeSpent" value="74962000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -658,7 +665,9 @@
     <MESSAGE value="updated ticketStorage class by removing duplicated method" />
     <MESSAGE value="Create UnitTests for FilmStorage class" />
     <MESSAGE value="Create UnitTests for ticketStorage class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create UnitTests for ticketStorage class" />
+    <MESSAGE value="debugged to add a new administrator" />
+    <MESSAGE value="Set static ID after data loaded" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set static ID after data loaded" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -922,13 +931,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Docker_file">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://f7a6de20-f2de-4d89-b5c1-bc168a0c08bd/schema/db_film/table/film">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -982,7 +984,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
+        <state relative-caret-position="1077">
           <caret line="80" column="82" selection-start-line="80" selection-start-column="82" selection-end-line="80" selection-end-column="82" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -993,6 +995,13 @@
             <element signature="method#login#0;class#Main#0" />
             <element signature="e#17184#17185#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Docker_file">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
         </state>
       </provider>
     </entry>

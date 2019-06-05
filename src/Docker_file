@@ -13,3 +13,6 @@ For Exampel:
  INSERT INTO admin(administratorID,  administratorFirstName,  administratorLastName,  loginName, loginPassword) VALUE('AD1', 'Min', 'Wu', 'minwuh081', 'password');
  INSERT INTO film(filmID, filmName, AgeLimitation) VALUE('FM1', 'Star War', '18');
  INSERT INTO ticket(ticketID, filmID, price, totalTicket) VALUE('TK1', 'FM1', 105.8, 20);
+
+4. Docker restart an existed container
+docker start mysq_film
