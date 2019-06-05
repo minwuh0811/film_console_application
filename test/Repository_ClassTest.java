@@ -13,11 +13,7 @@ class Repository_ClassTest {
             + java.io.File.separator + "film_konsollapplikation"
             + java.io.File.separator + "test"
             + java.io.File.separator + "Resources";
-
-    @Test
-    void write() {
-    }
-
+    
     ticket.Repository mock=mock(ticket.Repository.class);
     @Test
     void saveTofile() {
