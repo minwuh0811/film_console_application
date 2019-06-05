@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7835741-caab-4645-ac79-a232f2928cca" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/test/Repository_ClassTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Administrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Administrator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AdministratorStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AdministratorStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Docker_file" beforeDir="false" afterPath="$PROJECT_DIR$/src/Docker_file" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FilmStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FilmStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository_Class.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository_Class.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/film.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ticket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ticketStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ticketStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/AdministratorStorageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AdministratorStorageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/FilmStorageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/FilmStorageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/MainTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,13 +81,37 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1615">
-              <caret line="95" column="90" selection-start-line="95" selection-start-column="90" selection-end-line="95" selection-end-column="90" />
+            <state relative-caret-position="159">
+              <caret line="80" column="82" selection-start-line="80" selection-start-column="82" selection-end-line="80" selection-end-column="82" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#15755#15756#0" expanded="true" />
-                <element signature="e#15793#15794#0" expanded="true" />
+                <element signature="method#insertSQLDataAdmin#0;class#Main#0" />
+                <element signature="method#insertSQLDataFilm#0;class#Main#0" />
+                <element signature="method#removeSQLDataFilm#0;class#Main#0" />
+                <element signature="method#removeSQLDataTicket#0;class#Main#0" />
+                <element signature="method#login#0;class#Main#0" />
+                <element signature="e#17184#17185#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://f7a6de20-f2de-4d89-b5c1-bc168a0c08bd/schema/db_film/table/ticket">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true">
+                <filter text="" />
+              </filtering>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ticket.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="16" selection-start-column="16" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -84,17 +119,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FilmStorage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
+            <state relative-caret-position="145">
+              <caret line="64" column="9" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#FilmStorage#0;class#FilmStorage#0" />
                 <element signature="method#FilmStorage#1;class#FilmStorage#0" />
                 <element signature="method#saveToFilmFile#0;class#FilmStorage#0" />
-                <element signature="method#LoadFilmFile#0;class#FilmStorage#0" />
-                <element signature="method#close#0;class#FilmStorage#0" />
-                <element signature="e#2694#2695#0" expanded="true" />
-                <element signature="e#2731#2732#0" expanded="true" />
                 <element signature="method#searchFilm#0;class#FilmStorage#0" />
               </folding>
             </state>
@@ -102,61 +133,55 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ticketStorage.java">
+        <entry file="das://f7a6de20-f2de-4d89-b5c1-bc168a0c08bd/schema/db_film/table/film">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true">
+                <filter text="" />
+              </filtering>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Docker_file">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="98" column="34" selection-start-line="98" selection-start-column="34" selection-end-line="98" selection-end-column="34" />
+            <state relative-caret-position="-1">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ticket.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#saveToTicketFile#0;class#ticketStorage#0" />
-                <element signature="method#LoadTicketFile#0;class#ticketStorage#0" />
-                <element signature="method#searchTicket#0;class#ticketStorage#0" />
-                <element signature="method#close#0;class#ticketStorage#0" />
-                <element signature="e#3226#3227#0" expanded="true" />
-                <element signature="e#3267#3268#0" expanded="true" />
+                <element signature="e#869#870#0" expanded="true" />
+                <element signature="e#909#910#0" expanded="true" />
+                <element signature="e#939#940#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/ticketStorageTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        <entry file="das://f7a6de20-f2de-4d89-b5c1-bc168a0c08bd/schema/db_film/table/admin">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true">
+                <filter text="" />
+              </filtering>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/FilmStorageTest.java">
+        <entry file="file://$PROJECT_DIR$/src/Administrator.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/MainTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/AdministratorStorageTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -164,34 +189,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AdministratorStorage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-68">
-              <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+            <state relative-caret-position="901">
+              <caret line="65" column="9" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#561#562#0" expanded="true" />
                 <element signature="e#601#602#0" expanded="true" />
-                <element signature="method#LoadAdminFile#0;class#AdministratorStorage#0" />
-                <element signature="e#3094#3095#0" expanded="true" />
-                <element signature="e#3146#3147#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AdministratorInterface.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/Resources/Administrator.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -222,28 +226,29 @@
         <option value="$PROJECT_DIR$/src/filmStorige.java" />
         <option value="$PROJECT_DIR$/src/ticketStorige.java" />
         <option value="$PROJECT_DIR$/src/Repository.java" />
-        <option value="$PROJECT_DIR$/src/Repository_Class.java" />
         <option value="$PROJECT_DIR$/src/Administrator.txt" />
-        <option value="$PROJECT_DIR$/src/Docker_file" />
-        <option value="$PROJECT_DIR$/src/Administrator.java" />
-        <option value="$PROJECT_DIR$/src/ticket.java" />
-        <option value="$PROJECT_DIR$/src/film.java" />
         <option value="$PROJECT_DIR$/test/Resources/Docker_file" />
         <option value="$PROJECT_DIR$/test/Resources/Administrator.txt" />
-        <option value="$PROJECT_DIR$/src/AdministratorStorage.java" />
         <option value="$PROJECT_DIR$/src/AdministratorInterface.java" />
-        <option value="$PROJECT_DIR$/test/AdministratorStorageTest.java" />
-        <option value="$PROJECT_DIR$/test/MainTest.java" />
-        <option value="$PROJECT_DIR$/test/FilmStorageTest.java" />
         <option value="$PROJECT_DIR$/test/ticketStorageTest.java" />
-        <option value="$PROJECT_DIR$/src/FilmStorage.java" />
+        <option value="$PROJECT_DIR$/src/Docker_file" />
+        <option value="$PROJECT_DIR$/test/MainTest.java" />
         <option value="$PROJECT_DIR$/src/ticketStorage.java" />
+        <option value="$PROJECT_DIR$/test/Repository_ClassTest.java" />
+        <option value="$PROJECT_DIR$/src/Repository_Class.java" />
+        <option value="$PROJECT_DIR$/test/AdministratorStorageTest.java" />
+        <option value="$PROJECT_DIR$/test/FilmStorageTest.java" />
+        <option value="$PROJECT_DIR$/src/Administrator.java" />
+        <option value="$PROJECT_DIR$/src/AdministratorStorage.java" />
+        <option value="$PROJECT_DIR$/src/film.java" />
+        <option value="$PROJECT_DIR$/src/ticket.java" />
+        <option value="$PROJECT_DIR$/src/FilmStorage.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="532" />
+    <option name="x" value="531" />
     <option name="y" value="57" />
     <option name="width" value="984" />
     <option name="height" value="852" />
@@ -254,6 +259,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -282,7 +288,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -349,16 +354,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AdministratorStorageTest.addAdministrator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="film_konsollapplikation" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AdministratorStorageTest" />
-      <option name="METHOD_NAME" value="addAdministrator" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AdministratorStorageTest.addAdministratorSQLDB" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="film_konsollapplikation" />
       <option name="PACKAGE_NAME" value="" />
@@ -369,12 +364,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AdministratorStorageTest.close" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FilmStorageTest.addFilmDBSQL" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="film_konsollapplikation" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AdministratorStorageTest" />
-      <option name="METHOD_NAME" value="close" />
+      <option name="MAIN_CLASS_NAME" value="FilmStorageTest" />
+      <option name="METHOD_NAME" value="addFilmDBSQL" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Repository_ClassTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="film_konsollapplikation" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Repository_ClassTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -382,10 +386,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.FilmStorageTest.addFilmDBSQL" />
+        <item itemvalue="JUnit.Repository_ClassTest" />
         <item itemvalue="JUnit.AdministratorStorageTest" />
         <item itemvalue="JUnit.AdministratorStorageTest.addAdministratorSQLDB" />
-        <item itemvalue="JUnit.AdministratorStorageTest.close" />
-        <item itemvalue="JUnit.AdministratorStorageTest.addAdministrator" />
       </list>
     </recent_temporary>
   </component>
@@ -402,6 +406,7 @@
       <workItem from="1559545682576" duration="33983000" />
       <workItem from="1559644360247" duration="19314000" />
       <workItem from="1559676708853" duration="7325000" />
+      <workItem from="1559726142870" duration="14040000" />
     </task>
     <task id="LOCAL-00001" summary="Add Administrator, Administrator login, Administrator Add New Ticket.">
       <created>1559595141022</created>
@@ -533,12 +538,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AdministratorStorageTest_addAdministratorSQLDB - 2019.06.04 at 23h 04m 18s.xml">
-      <configuration name="AdministratorStorageTest.addAdministratorSQLDB" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AdministratorStorageTest_addAdministratorSQLDB - 2019.06.04 at 23h 04m 30s.xml">
-      <configuration name="AdministratorStorageTest.addAdministratorSQLDB" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="AdministratorStorageTest - 2019.06.04 at 23h 04m 53s.xml">
       <configuration name="AdministratorStorageTest" configurationId="JUnit" />
     </history-entry>
@@ -563,9 +562,15 @@
     <history-entry file="AdministratorStorageTest - 2019.06.04 at 23h 10m 22s.xml">
       <configuration name="AdministratorStorageTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="Repository_ClassTest - 2019.06.05 at 12h 55m 31s.xml">
+      <configuration name="Repository_ClassTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FilmStorageTest_addFilmDBSQL - 2019.06.05 at 13h 04m 05s.xml">
+      <configuration name="FilmStorageTest.addFilmDBSQL" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60622000" />
+    <option name="totallyTimeSpent" value="74662000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -574,7 +579,7 @@
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Learn" order="2" weight="0.32955465" />
-      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.15384616" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.18299595" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="0" />
@@ -591,20 +596,20 @@
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="13" />
-      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.109311745" />
-      <window_info anchor="right" id="Database" order="0" visible="true" weight="0.18704453" />
+      <window_info anchor="right" id="Database" order="0" weight="0.15465587" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info anchor="right" id="Maven" order="2" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="4" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="5" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="6" weight="0.25" />
+      <window_info anchor="right" id="Coverage" order="7" side_tool="true" weight="0.109311745" />
     </layout>
     <layout-to-restore>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Learn" order="2" weight="0.32955465" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.19109312" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.1562753" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="0" />
@@ -621,14 +626,14 @@
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="13" />
-      <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.32955465" />
-      <window_info anchor="right" id="Database" order="1" weight="0.2291498" />
-      <window_info anchor="right" id="Palette&#9;" order="2" />
-      <window_info anchor="right" id="Maven" order="3" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+      <window_info anchor="right" id="Database" order="0" visible="true" weight="0.26477733" />
+      <window_info anchor="right" id="Palette&#9;" order="1" />
+      <window_info anchor="right" id="Maven" order="2" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="4" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="5" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="6" weight="0.25" />
+      <window_info anchor="right" id="Coverage" order="7" side_tool="true" weight="0.109311745" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -660,23 +665,15 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/AdministratorStorage.java</url>
-          <line>57</line>
+          <line>53</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/AdministratorStorage.java</url>
-          <line>59</line>
+          <line>55</line>
           <properties />
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/FilmStorage.java</url>
-          <line>94</line>
-          <properties class="FilmStorage" method="searchFilm">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -692,68 +689,6 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f7a6de20-f2de-4d89-b5c1-bc168a0c08bd/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="das://f7a6de20-f2de-4d89-b5c1-bc168a0c08bd/schema/db_film/table/film">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f7a6de20-f2de-4d89-b5c1-bc168a0c08bd/schema/db_film/table/ticket">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/film.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-27">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="e#625#626#0" expanded="true" />
-            <element signature="e#661#662#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f7a6de20-f2de-4d89-b5c1-bc168a0c08bd/schema/db_film/table/admin">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Administrator.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ticket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Film.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ticket.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/65646587-bf2e-45a8-9d75-cf1d739828bb/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -766,13 +701,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Docker_file">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/Resources/Docker_file">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -782,23 +710,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/Resources/Film.txt">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository_Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="52" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Administrator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-340">
-          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="51" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/Resources/WriteTest.txt">
       <provider selected="true" editor-type-id="text-editor" />
@@ -814,13 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="49" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" selection-start-column="17" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -880,8 +784,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/ResourcesWriteTest.txt">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/test/ResourcesWriteTest.txt" />
+    <entry file="file://$PROJECT_DIR$/src/AdministratorInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/Resources/Administrator.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -890,104 +799,199 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AdministratorInterface.java">
+    <entry file="file://$PROJECT_DIR$/src/Repository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+        <state>
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/AdministratorStorageTest.java">
+    <entry file="file://$PROJECT_DIR$/test/ticketStorageTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="306">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Repository_ClassTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/MainTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="206">
+          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AdministratorStorage.java">
+    <entry file="file://$PROJECT_DIR$/test/AdministratorStorageTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
-          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        <state relative-caret-position="68">
+          <caret line="10" selection-start-line="10" selection-end-line="14" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#561#562#0" expanded="true" />
-            <element signature="e#601#602#0" expanded="true" />
-            <element signature="method#LoadAdminFile#0;class#AdministratorStorage#0" />
-            <element signature="e#3094#3095#0" expanded="true" />
-            <element signature="e#3146#3147#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/FilmStorageTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="272">
+          <caret line="24" column="57" lean-forward="true" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/ticketStorageTest.java">
+    <entry file="file://$PROJECT_DIR$/src/Repository_Class.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        <state relative-caret-position="136">
+          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#Repository_Class#0;class#Repository_Class#0" />
+            <element signature="method#write#0;class#Repository_Class#0" />
+            <element signature="method#SaveTofile#0;class#Repository_Class#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ticketStorage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="98" column="34" selection-start-line="98" selection-start-column="34" selection-end-line="98" selection-end-column="34" />
+        <state relative-caret-position="-64">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#saveToTicketFile#0;class#ticketStorage#0" />
             <element signature="method#LoadTicketFile#0;class#ticketStorage#0" />
             <element signature="method#searchTicket#0;class#ticketStorage#0" />
             <element signature="method#close#0;class#ticketStorage#0" />
-            <element signature="e#3226#3227#0" expanded="true" />
-            <element signature="e#3267#3268#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Film.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Administrator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-289">
+          <caret line="22" column="45" lean-forward="true" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/film.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Administrator.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://f7a6de20-f2de-4d89-b5c1-bc168a0c08bd/schema/db_film/table/admin">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AdministratorStorage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="65" column="9" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#561#562#0" expanded="true" />
+            <element signature="e#601#602#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Docker_file">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://f7a6de20-f2de-4d89-b5c1-bc168a0c08bd/schema/db_film/table/film">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FilmStorage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
+        <state relative-caret-position="145">
+          <caret line="64" column="9" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#FilmStorage#0;class#FilmStorage#0" />
             <element signature="method#FilmStorage#1;class#FilmStorage#0" />
             <element signature="method#saveToFilmFile#0;class#FilmStorage#0" />
-            <element signature="method#LoadFilmFile#0;class#FilmStorage#0" />
-            <element signature="method#close#0;class#FilmStorage#0" />
-            <element signature="e#2694#2695#0" expanded="true" />
-            <element signature="e#2731#2732#0" expanded="true" />
             <element signature="method#searchFilm#0;class#FilmStorage#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://f7a6de20-f2de-4d89-b5c1-bc168a0c08bd/schema/db_film/table/ticket">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ticket.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ticket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+          <folding>
+            <element signature="e#869#870#0" expanded="true" />
+            <element signature="e#909#910#0" expanded="true" />
+            <element signature="e#939#940#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="95" column="90" selection-start-line="95" selection-start-column="90" selection-end-line="95" selection-end-column="90" />
+        <state relative-caret-position="159">
+          <caret line="80" column="82" selection-start-line="80" selection-start-column="82" selection-end-line="80" selection-end-column="82" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#15755#15756#0" expanded="true" />
-            <element signature="e#15793#15794#0" expanded="true" />
+            <element signature="method#insertSQLDataAdmin#0;class#Main#0" />
+            <element signature="method#insertSQLDataFilm#0;class#Main#0" />
+            <element signature="method#removeSQLDataFilm#0;class#Main#0" />
+            <element signature="method#removeSQLDataTicket#0;class#Main#0" />
+            <element signature="method#login#0;class#Main#0" />
+            <element signature="e#17184#17185#0" expanded="true" />
           </folding>
         </state>
       </provider>

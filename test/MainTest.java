@@ -19,4 +19,7 @@ public class MainTest {
 
     }
 
+    @Test
+    void insertSQLDataAdmin() {
+    }
 }

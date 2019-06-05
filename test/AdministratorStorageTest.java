@@ -23,23 +23,4 @@ class AdministratorStorageTest {
 
     }
 
-    Repository mock=mock(Repository.class);
-    @Test
-    void close() {
-        String string="WriteTest.txt";
-        path=path + java.io.File.separator + string;
-        java.io.File file = new java.io.File(path);
-        try (FileWriter filewriter = new FileWriter(file)) {
-            Main.WriteTextFile(mock,"the expected text");
-            verify(mock).write( "the expected text");
-        } catch (IOException e) {
-            e.printStackTrace();
-
-
-        }
     }
-
-
-
-
-}
