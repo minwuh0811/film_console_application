@@ -75,7 +75,7 @@ public class Main {
 //                            String password = JOptionPane.showInputDialog("Enter password");
                             System.out.println("Enter password");
                             String password=main.getString();
-                            if (login(administratorStorageBin.getList(), loginName, password)) {
+                            if (main.login(administratorStorageBin.getList(), loginName, password)) {
                                 //JOptionPane.showMessageDialog(null, "Login Successfully");
                                 System.out.println("Login Successfully");
                                 //String LoginChoice = JOptionPane.showInputDialog("Add a Film Press 1\nRemove a Film Press 2\nChange the Number of Ticket in the Storage Press 3\nExist 4");
@@ -217,123 +217,8 @@ public class Main {
     }
 
 
-//        try {
-//            Class.forName("com.mysql.cj.jdbc.Driver");
-//            connection = DriverManager.getConnection(DBMySQLUrl, DBUserName, DBPassword);
-//            statement = connection.createStatement();
-//            resultSet = statement.executeQuery("select * from " + DBTable + ";");
-//            While whilnew=whileload
-//        } catch (Exception e) {
-//        }
-//        return whileload.getStorage();
-//    }
 
-
-//            resultSetFilm = statement.executeQuery("select * from " + filmDBTable + ";");
-//            FilmStorage filmstorageSQL = new FilmStorage();
-//            while (resultSetFilm.next()) {
-//                film film = new film(resultSetFilm.getString(1), resultSetFilm.getString(2), resultSetFilm.getInt(3));
-//                filmstorageSQL.addFilmDBSQL(film);
-//            }
-//            filmstorageSQL.close("Film", path);
-//            database.add(filmstorageSQL);
-//            resultSetTicket = statement.executeQuery("select * from " + ticketDBTable + ";");
-//            ticketStorage ticketstorageSQL = new ticketStorage();
-//            while (resultSetTicket.next()) {
-//                String filmID = resultSetTicket.getString(2);
-//                filmstorageSQL.searchFilm(filmID, filmstorageSQL.getList());
-//                ticket newTicket = new ticket(resultSetTicket.getString(1), filmstorageSQL.getFilm(), resultSetTicket.getInt(3), resultSetTicket.getInt(4));
-//                ticketstorageSQL.addTicketDBSQL(newTicket);
-//            }
-//            ticketstorageSQL.close("Ticket", path);
-//            database.add(ticketstorageSQL);
-//        } catch (Exception e) {
-//            JOptionPane.showMessageDialog(null, e);
-//        }
-//        return database;
-
-
-//    public static void insertSQLDataAdmin(Administrator administrator, String administratorDBTable,String DBMySQLUrl, String DBUserName, String DBPassword ) {
-//        try {
-//            Class.forName("com.mysql.cj.jdbc.Driver");
-//            connection = DriverManager.getConnection(DBMySQLUrl, DBUserName, DBPassword);
-//            statement = connection.createStatement();
-//            String string = String.format("INSERT INTO " + administratorDBTable +
-//                    " VALUES(\"%s\",\"%s\",\"%s\",\"%s\",\"%s\");", administrator.getAdministratorID(), administrator.getFirstname(), administrator.getLastname(), administrator.getAdministratorName(), administrator.getPassword());
-//            statement.execute(string);
-//        } catch (Exception e) {
-//            JOptionPane.showMessageDialog(null, e);
-//        }
-//    }
-
-/*
-    public static void removeSQLDataAdmin(Administrator administrator) {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection(DBMySQLUrl, DBUserName, DBPassword);
-            statement = connection.createStatement();
-            String string = String.format("DELETE FROM " + administratorDBTable +
-                    " WHERE administratorID=\'" + administrator.getAdministratorID() + "\';");
-            statement.execute(string);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
-    }
-*/
-
-/*    public static void insertSQLDataFilm(film film) {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection(DBMySQLUrl, DBUserName, DBPassword);
-            statement = connection.createStatement();
-            String string = String.format("INSERT INTO " + filmDBTable +
-                    " VALUES(\"%s\",\"%s\",\"%d\");", film.getFilmID(), film.getName(), film.getLimitofage());
-            statement.execute(string);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
-    }*/
-
-/*    public static void removeSQLDataFilm(film film) {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection(DBMySQLUrl, DBUserName, DBPassword);
-            statement = connection.createStatement();
-            String string = String.format("DELETE FROM " + filmDBTable +
-                    " WHERE filmID=\'" + film.getFilmID() + "\';");
-            statement.execute(string);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
-    }*/
-
-/*    public static void insertSQLDataTicket(ticket ticket) {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection(DBMySQLUrl, DBUserName, DBPassword);
-            statement = connection.createStatement();
-            String string = String.format("INSERT INTO " + ticketDBTable +
-                    " VALUES(\"%s\",\"%s\", \"%d\",\"%d\");", ticket.getTicketID(), ticket.getFilm().getFilmID(), ticket.getPrice(), ticket.TotalofTicket);
-            statement.execute(string);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
-    }*/
-
-/*    public static void removeSQLDataTicket(ticket ticket) {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection(DBMySQLUrl, DBUserName, DBPassword);
-            statement = connection.createStatement();
-            String string = String.format("DELETE FROM " + ticketDBTable +
-                    " WHERE ticketID=\'" + ticket.getTicketID() + "\';");
-            statement.execute(string);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
-    }*/
-
-    private static boolean login(ArrayList<Administrator> administratorslist, String login, String password) {
+    public boolean login(ArrayList<Administrator> administratorslist, String login, String password) {
         int length = administratorslist.size();
         for (int i = 0; i < length; i++) {
             if (administratorslist.get(i).getAdministratorName().equals(login) && administratorslist.get(i).getPassword().equals(password)) {

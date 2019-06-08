@@ -90,5 +90,22 @@ public class MainTest {
         }
     }
 
+    @Test
+    void loginSuccessful() throws IOException{
+        try (InputStream inputStream = MainTest.class.getResourceAsStream("/LoginSuccess")) {
+            Scanner scanner = new Scanner(inputStream);
+            Main main = new Main(scanner);
+            String loginName=main.getString();
+            String password=main.getString();
+            DataBaseConnection dataBaseConnection=new DataBaseConnection(DBURL,DBUser,DBPassword);
+            TablesSQL tableSQL=new TablesSQL("admin", "film", "ticket");
+            FileName fileName=new FileName("adminTest", "filmTest", "ticketTest");
+            LoadDataSQLSaveToBinAndTxtFile localDataSQL= new LoadDataSQLSaveToBinAndTxtFile(tableSQL,dataBaseConnection,fileName,path);
+            assertTrue(main.login(localDataSQL.getWhileLooplists().get(0).getAdministratorStorage().getList(),loginName,password));
+        }
+
+    }
+
+
 
 }
