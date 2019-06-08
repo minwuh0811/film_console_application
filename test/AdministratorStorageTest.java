@@ -1,11 +1,7 @@
 import org.junit.jupiter.api.Test;
 
-import java.io.FileWriter;
-import java.io.IOException;
-
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.mock;
+
 
 class AdministratorStorageTest {
     private String path = System.getProperty("user.home")
@@ -16,11 +12,12 @@ class AdministratorStorageTest {
 
     @Test
     void addAdministratorSQLDB() {
-        AdministratorStorage administratorStorage=new AdministratorStorage("Administrator",path);
-        int length=administratorStorage.getAdministratorlist().size();
+        AdministratorStorage administratorStorage=new AdministratorStorage("adminAddBinAndTxt",path,"AD");
+        int length=administratorStorage.getList().size();
         administratorStorage.addAdministratorSQLDB(new Administrator());
-        assertEquals(4,administratorStorage.getAdministratorlist().size());
-
+        assertEquals(2,administratorStorage.getList().size());
     }
+
+
 
     }

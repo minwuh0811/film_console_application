@@ -3,31 +3,43 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class FilmStorageTest {
-    private String path = System.getProperty("user.home")
+    static String path = System.getProperty("user.home")
             + java.io.File.separator + "IdeaProjects"
             + java.io.File.separator + "film_konsollapplikation"
             + java.io.File.separator + "test"
             + java.io.File.separator + "Resources";
 
     @Test
-    void addFilmDBSQL() {
-        FilmStorage filmStorage=new FilmStorage("Film", path);
-        film film=new film();
+    void addFilmToBinAndTxt() {
+        FilmStorage filmStorage=new FilmStorage("filmAddBinAndTxt", path,"FM");
+        Film film=new Film();
         filmStorage.addFilmDBSQL(film);
-        assertEquals(2,filmStorage.getFilmlist().size());
-        }
+        assertEquals(2,filmStorage.getList().size());
+    }
 
     @Test
     void removefilm() {
-        FilmStorage filmStorage=new FilmStorage("Film",path);
-        film film=new film();
+        FilmStorage filmStorage=new FilmStorage("filmRemoveTest",path,"FM");
+        Film film=new Film();
+        filmStorage.addFilmDBSQL(film);
         filmStorage.removefilm(film);
-        assertEquals(0,filmStorage.getFilmlist().size());
+        assertEquals(1,filmStorage.getList().size());
     }
-
 
 
     @Test
-    void searchFilm() {
+    void searchFilmByFilmID() {
+        FilmStorage filmStorage=new FilmStorage("Film",path,"FM");
+        filmStorage.searchFilm("FM3", filmStorage.getList());
+        assertEquals("FM3", filmStorage.getFilm().getFilmID());
     }
-}
+
+    @Test
+    void returnFirstMissingIDForFilm() {
+        FilmStorage filmStorage=new FilmStorage("Film",path,"FM");
+        int ID=filmStorage.returnID();
+        assertEquals(2, ID);
+    }
+
+
+    }

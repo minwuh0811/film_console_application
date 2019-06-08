@@ -1,5 +1,4 @@
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class WhileTest {
@@ -68,4 +67,33 @@ class WhileTest {
         While whileTicket=new While(tableSQL.getTicketDBTable(),dataBaseConnection.getStatement(),fileName.getFileNameTicket(),path,whileFilm.getFilmStorage(),new TicketStorage());
         assertEquals("TK1",whileTicket.getTicketStorage().getList().get(0).getTicketID());
     }
+
+    @Test
+    void whileAdminIDList() {
+        DataBaseConnection dataBaseConnection=new DataBaseConnection(DBURL,DBUser,DBPassword);
+        TablesSQL tableSQL=new TablesSQL("admin", "film", "ticket");
+        FileName fileName=new FileName("adminTest", "filmTest", "ticketTest");
+        While whileAdmin=new While(tableSQL.getAdministratorDBTable(),dataBaseConnection.getStatement(),fileName.getFileNameAdmin(),path,new AdministratorStorage());
+        assertEquals("AD1",whileAdmin.getAdministratorStorage().getIDlist().get(0));
+    }
+
+    @Test
+    void whileFilmIDList() {
+        DataBaseConnection dataBaseConnection=new DataBaseConnection(DBURL,DBUser,DBPassword);
+        TablesSQL tableSQL=new TablesSQL("admin", "film", "ticket");
+        FileName fileName=new FileName("adminTest", "filmTest", "ticketTest");
+        While whileFilm=new While(tableSQL.getFilmDBTable(),dataBaseConnection.getStatement(),fileName.getFileNameFilm(),path,new FilmStorage());
+        assertEquals("FM1",whileFilm.getFilmStorage().getIDlist().get(0));
+    }
+
+    @Test
+    void whileTicketIDList() {
+        DataBaseConnection dataBaseConnection=new DataBaseConnection(DBURL,DBUser,DBPassword);
+        TablesSQL tableSQL=new TablesSQL("admin", "film", "ticket");
+        FileName fileName=new FileName("adminTest", "filmTest", "ticketTest");
+        While whileFilm=new While(tableSQL.getFilmDBTable(),dataBaseConnection.getStatement(),fileName.getFileNameFilm(),path,new FilmStorage());
+        While whileTicket=new While(tableSQL.getTicketDBTable(),dataBaseConnection.getStatement(),fileName.getFileNameTicket(),path,whileFilm.getFilmStorage(),new TicketStorage());
+        assertEquals("TK1",whileTicket.getTicketStorage().getIDlist().get(0));
+    }
+
 }
