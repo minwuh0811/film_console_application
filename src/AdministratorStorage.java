@@ -1,25 +1,28 @@
 import java.io.*;
 import java.util.ArrayList;
 
-public class AdministratorStorage implements AdministratorInterface {
+public class AdministratorStorage extends Storage implements AdministratorInterface  {
     private Administrator administrator;
-    private ArrayList<Administrator> administratorlist= new ArrayList<>();
-    private String file_name;
-    private String path;
+    private ArrayList<Administrator> list=new ArrayList<>();
 
     public AdministratorStorage() {
 
     }
 
-    public AdministratorStorage(String file_name, String path) {
-        this.file_name=file_name;
-        this.path=path;
-        LoadAdminFile(file_name,path);
+    public AdministratorStorage(String file_name, String path,String string) {
+            super(file_name,path,string);
+            LoadAdminFile(file_name,path);
+        }
+    public ArrayList<String> getIDlist() {
+        return IDlist;
     }
 
-    public ArrayList<Administrator> getAdministratorlist() {
-        return administratorlist;
+
+
+    public ArrayList<Administrator> getList() {
+        return list;
     }
+
 
     private void saveToAdminFile(String file_name, String path) {
         String file1=file_name+".bin";
@@ -28,21 +31,21 @@ public class AdministratorStorage implements AdministratorInterface {
         String file2=file_name+".txt";
         String path_txt = path + java.io.File.separator + file2;
         java.io.File file = new java.io.File(path_txt);
-        int length=administratorlist.size();
+        int length=list.size();
         String text="";
         for (int i=0; i<length; i++) {
-            text+="" + administratorlist.get(i).getAdministratorID() + ' '
-                    + administratorlist.get(i).getFirstname() + ' '
-                    + administratorlist.get(i).getLastname() +' '
-                    + administratorlist.get(i).getAdministratorName() + ' '
-                    + administratorlist.get(i).getPassword() +'\n';        }
+            text+="" + list.get(i).getAdministratorID() + ' '
+                    + list.get(i).getFirstname() + ' '
+                    + list.get(i).getLastname() +' '
+                    + list.get(i).getAdministratorName() + ' '
+                    + list.get(i).getPassword() +'\n';        }
 
         Repository_Class repository= new Repository_Class();
         repository.SaveTofile(file,text);
 
         try (ObjectOutputStream out =
                      new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(file_Customer)))) {
-            out.writeObject(administratorlist);
+            out.writeObject(list);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -56,7 +59,7 @@ public class AdministratorStorage implements AdministratorInterface {
         java.io.File file_Customer = new java.io.File(path);
         try (ObjectInputStream in =
                      new ObjectInputStream(new BufferedInputStream(new FileInputStream(file_Customer)))) {
-            administratorlist = (ArrayList<Administrator>) in.readObject();
+            list = (ArrayList<Administrator>) in.readObject();
         } catch (FileNotFoundException e) {
 
         } catch (IOException e) {
@@ -72,7 +75,10 @@ public class AdministratorStorage implements AdministratorInterface {
     }
 
     public void addAdministratorSQLDB(Administrator administrator) {
-        administratorlist.add(administrator);
+        list.add(administrator);
+        IDlist.add(administrator.getAdministratorID());
     }
 
 }
+
+
