@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -7,7 +6,7 @@ public class While {
     private String path;
     private AdministratorStorage administratorStorage;
     private FilmStorage filmStorage;
-    private ticketStorage ticketStorage;
+    private TicketStorage ticketStorage;
     private Statement statement;
     private String DBTable;
 
@@ -18,9 +17,9 @@ public class While {
         this.DBTable=DBTable;
         this.statement=statement;
         try {
-            this.administratorStorage=whileAdmin();
+            this.administratorStorage=whileAdmin(DBTable, statement, fileName, path, administratorStorage);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
+            System.out.println(e);
         }
     }
 
@@ -31,13 +30,13 @@ public class While {
         this.DBTable=DBTable;
         this.statement=statement;
         try {
-            this.filmStorage=whileFilm();
+            this.filmStorage=whileFilm(DBTable, statement, fileName, path, filmStorage);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
+            System.out.println(e);
         }
     }
 
-    public While(String DBTable, Statement statement,String fileName, String path, FilmStorage filmStorage, ticketStorage ticketStorage){
+    public While(String DBTable, Statement statement,String fileName, String path, FilmStorage filmStorage, TicketStorage ticketStorage){
         this.fileName=fileName;
         this.path=path;
         this.filmStorage=filmStorage;
@@ -45,14 +44,14 @@ public class While {
         this.DBTable=DBTable;
         this.statement=statement;
         try {
-            this.ticketStorage=whileTicket();
+            this.ticketStorage=whileTicket(DBTable,statement,  fileName, path, filmStorage,ticketStorage);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
+            System.out.println(e);
         }
     }
 
 
-    private AdministratorStorage whileAdmin() throws Exception {
+    public AdministratorStorage whileAdmin(String DBTable, Statement statement, String fileName, String path, AdministratorStorage administratorStorage) {
         try {
             ResultSet resultSet = statement.executeQuery("select * from " + DBTable + ";");
             while (resultSet.next()) {
@@ -60,35 +59,39 @@ public class While {
                 administratorStorage.addAdministratorSQLDB(administrator);
             }
             administratorStorage.close(fileName, path);
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            System.out.println(e);
+        }
         return administratorStorage;
     }
 
-    public FilmStorage whileFilm() throws Exception {
-        ResultSet resultSet = statement.executeQuery("select * from " + DBTable + ";");
-        while (resultSet.next()) {
-            film film = new film(resultSet.getString(1), resultSet.getString(2), resultSet.getInt(3));
-            filmStorage.addFilmDBSQL(film);
-        }
+    public FilmStorage whileFilm(String DBTable, Statement statement, String fileName, String path, FilmStorage filmStorage) {
+        try {
+            ResultSet resultSet = statement.executeQuery("select * from " + DBTable + ";");
+            while (resultSet.next()) {
+                 Film film = new Film(resultSet.getString(1), resultSet.getString(2), resultSet.getInt(3));
+                 filmStorage.addFilmDBSQL(film);
+            }
         filmStorage.close(fileName, path);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
         return filmStorage;
     }
 
-    public ticketStorage whileTicket() throws Exception {
+    public TicketStorage whileTicket(String DBTable, Statement statement, String fileName, String path, FilmStorage filmStorage,TicketStorage ticketStorage) throws Exception {
         ResultSet resultSet = statement.executeQuery("select * from " + DBTable + ";");
         while (resultSet.next()) {
             String filmID = resultSet.getString(2);
             filmStorage.searchFilm(filmID, filmStorage.getList());
-            ticket newTicket = new ticket(resultSet.getString(1), filmStorage.getFilm(), resultSet.getInt(3), resultSet.getInt(4));
+            Ticket newTicket = new Ticket(resultSet.getString(1), filmStorage.getFilm(), resultSet.getInt(3), resultSet.getInt(4));
             ticketStorage.addTicketDBSQL(newTicket);
         }
         ticketStorage.close(fileName, path);
         return ticketStorage;
     }
 
-    public String getFileName() {
-        return fileName;
-    }
+
 
     public String getPath() {
         return path;
@@ -102,8 +105,8 @@ public class While {
         return filmStorage;
     }
 
-    public ticketStorage getTicketStorage() {
+    public TicketStorage getTicketStorage() {
         return ticketStorage;
     }
-    
+
 }
