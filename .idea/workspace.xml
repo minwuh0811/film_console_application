@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7835741-caab-4645-ac79-a232f2928cca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/FilmInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InsertSQLData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Storage.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/test/AllTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/test/Resources/getString" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Administrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Administrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AdministratorStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AdministratorStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Docker_file" beforeDir="false" afterPath="$PROJECT_DIR$/src/Docker_file" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FilmStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FilmStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
@@ -136,11 +131,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ticket.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-299">
               <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Docker_file">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -184,20 +188,6 @@
                 <element signature="e#2824#2825#0" expanded="true" />
                 <element signature="method#addFilmDBSQL#0;class#FilmStorage#0" />
                 <element signature="e#3002#3003#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TicketStorage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="71" column="20" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#667#668#0" expanded="true" />
-                <element signature="e#3068#3069#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -452,7 +442,7 @@
       <workItem from="1559908711733" duration="5969000" />
       <workItem from="1559942651227" duration="11008000" />
       <workItem from="1560005469149" duration="1722000" />
-      <workItem from="1560022295780" duration="3213000" />
+      <workItem from="1560022295780" duration="3488000" />
     </task>
     <task id="LOCAL-00001" summary="Add Administrator, Administrator login, Administrator Add New Ticket.">
       <created>1559595141022</created>
@@ -678,7 +668,42 @@
       <option name="project" value="LOCAL" />
       <updated>1560025727357</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="added interface for Film">
+      <created>1560025759951</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1560025759951</updated>
+    </task>
+    <task id="LOCAL-00034" summary="InsertSQLData object">
+      <created>1560025807031</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1560025807031</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Corrected static ID">
+      <created>1560025866375</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1560025866375</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Create parent storage object for film, admin and ticket">
+      <created>1560025940387</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1560025940387</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Extends from Storage object">
+      <created>1560025996241</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1560025996241</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -714,7 +739,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133743000" />
+    <option name="totallyTimeSpent" value="134018000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -783,11 +808,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Used for Docker" />
-    <MESSAGE value="Interface for Mockito test" />
-    <MESSAGE value="fixed problem of loading data through MySQL and updated the binary and .TXT file after mysql data loading" />
-    <MESSAGE value="create DATABASE for testing using MySQL in Docker" />
-    <MESSAGE value="create binary and TXT files to test addAdministrator method in AdministratorStorage class" />
     <MESSAGE value="do unit tests for public methods in AdministratorStorage class" />
     <MESSAGE value="create UnitTest to test data loading from DATEBASE" />
     <MESSAGE value="updated FilmStorage class remove duplicated method" />
@@ -808,7 +828,12 @@
     <MESSAGE value="UnitTest for Data load from each Table" />
     <MESSAGE value="6 Unit Test for While Object to Load Data from each Table 90% method coverage and 88% lines coverage" />
     <MESSAGE value="renamed" />
-    <option name="LAST_COMMIT_MESSAGE" value="renamed" />
+    <MESSAGE value="added interface for Film" />
+    <MESSAGE value="InsertSQLData object" />
+    <MESSAGE value="Corrected static ID" />
+    <MESSAGE value="Create parent storage object for film, admin and ticket" />
+    <MESSAGE value="Extends from Storage object" />
+    <option name="LAST_COMMIT_MESSAGE" value="Extends from Storage object" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -899,13 +924,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Docker_file">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1193,6 +1211,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-299">
           <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Docker_file">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="30" />
         </state>
       </provider>
     </entry>

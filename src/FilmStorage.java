@@ -1,23 +1,40 @@
 import java.io.*;
 import java.util.ArrayList;
 
-public class  FilmStorage {
-    private film film;
-    private ArrayList<film> filmlist=new ArrayList<>();
-    private String file_name;
-    private String path;
+public class FilmStorage extends Storage implements FilmInterface {
+    private Film film;
+    private ArrayList<Film> list=new ArrayList<>();
 
     public FilmStorage(){
 
     }
 
-    public FilmStorage(String file_name, String path) {
-        this.file_name=file_name;
-        this.path=path;
+    public FilmStorage(String file_name, String path, String string) {
+        super(file_name,path,string);
         LoadFilmFile(file_name,path);
     }
 
-    public film getFilm() {
+    public int returnID() {
+        int length = IDlist.size();
+        int Result = -1;
+        for (int n = 1; n <=length; n++) {
+            String loop = string + n;
+            if (!IDlist.get(n-1).equals(loop)) {
+                Result = n;
+                break;
+            }
+        }
+        return Result;
+    }
+
+
+    public ArrayList<String> getIDlist() {
+        for (Film film: list) {
+            IDlist.add(film.getFilmID());       }
+        return IDlist;
+    }
+
+    public Film getFilm() {
         return film;
     }
 
@@ -28,24 +45,20 @@ public class  FilmStorage {
         String file2=file_name+".txt";
         String path_txt = path + java.io.File.separator + file2;
         java.io.File file = new java.io.File(path_txt);
-        int length=filmlist.size();
+        int length=list.size();
         String text="";
         for (int i=0; i<length; i++) {
-            text += "" + filmlist.get(i).getFilmID() + ' '
-                    + filmlist.get(i).getName() + ' '
-                    + filmlist.get(i).getLimitofage() + '\n';
+            text += "" + list.get(i).getFilmID() + ' '
+                    + list.get(i).getName() + ' '
+                    + list.get(i).getLimitofage() + '\n';
         }
 
-        try (FileWriter filewriter = new FileWriter(file)) {
-            Repository repository=new Repository_Class(filewriter);
-            Main.WriteTextFile(repository,text);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Repository_Class repository= new Repository_Class();
+        repository.SaveTofile(file,text);
 
         try (ObjectOutputStream out =
                      new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(file_Customer)))) {
-            out.writeObject(filmlist);
+            out.writeObject(list);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -59,7 +72,7 @@ public class  FilmStorage {
         java.io.File file_Customer = new java.io.File(path);
         try (ObjectInputStream in =
                      new ObjectInputStream(new BufferedInputStream(new FileInputStream(file_Customer)))) {
-            filmlist = (ArrayList<film>) in.readObject();
+            list = (ArrayList<Film>) in.readObject();
         } catch (FileNotFoundException e) {
 
         } catch (IOException e) {
@@ -67,38 +80,36 @@ public class  FilmStorage {
         } catch (ClassNotFoundException e) {
 
         }
-        try {
-            Administrator.setID(filmlist.size());
-        } catch ( java.lang.IndexOutOfBoundsException e){
-            Administrator.setID(0);
-        }
-
+        getIDlist();
     }
 
     public void close(String file_name,String path){
         saveToFilmFile(file_name,path);
-//        saveToOrderSearchFile();
     }
 
-    public void removefilm(film film) {
-        filmlist.remove(film);
+    public void removefilm(Film film) {
+        list.remove(film);
     }
 
-    public void addFilmDBSQL(film film) {
-        filmlist.add(film);
+    public void addFilmDBSQL(Film film) {
+        list.add(film);
+        IDlist.add(film.getFilmID());
     }
 
-    public ArrayList<film> getFilmlist() {
-        return filmlist;
+    public ArrayList<Film> getList() {
+        return list;
     }
 
-    public void searchFilm(String filmID, ArrayList<film> filmlist) {
-        for (film film : filmlist) {
+    public void searchFilm(String filmID, ArrayList<Film> filmlist) {
+        for (Film film : filmlist) {
             if (film.getFilmID().equals(filmID)) {
                 this.film=film;
             }
         }
 
+    }
 
     }
-}
+
+
+
