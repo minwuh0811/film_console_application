@@ -46,15 +46,21 @@ public class Storage {
     public int returnID() {
         int length = IDlist.size();
         int Result = -1;
-        for (int n = 1; n <= length; n++) {
+        for (int n = 1; n <=length; n++) {
             String loop = string + n;
             if (!IDlist.get(n-1).equals(loop)) {
                 Result = n;
-                break;
+                return Result;
             }
         }
-        return Result;
+        return Result=length+1;
     }
 
+    public String getString() {
+        return string;
+    }
 
+    public void setString(String string) {
+        this.string = string;
+    }
 }
