@@ -5,7 +5,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
@@ -91,7 +92,7 @@ public class AllTest {
         TablesSQL tableSQL=new TablesSQL("admin", "film", "ticket");
         FileName fileName=new FileName("adminInsertTest", "filmInsertTest", "ticketInsertTest");
         While whileFilm=new While(tableSQL.getFilmDBTable(),dataBaseConnection.getStatement(),fileName.getFileNameFilm(),path,new FilmStorage());
-        Film.setID(whileFilm.getFilmStorage().getList().size());
+        Film.setID(whileFilm.getFilmStorage().returnID());
         Film film=new Film("Frozen", 6);
         InsertSQLData insertSQLData=new InsertSQLData(dataBaseConnection,tableSQL,film);
         LoadDataSQLSaveToBinAndTxtFile localDataSQL= new LoadDataSQLSaveToBinAndTxtFile(tableSQL,dataBaseConnection,fileName,path);
@@ -107,8 +108,8 @@ public class AllTest {
         FileName fileName=new FileName("adminInsertTest", "filmInsertTest", "ticketInsertTest");
         While whileFilm=new While(tableSQL.getFilmDBTable(),dataBaseConnection.getStatement(),fileName.getFileNameTicket(),path,new FilmStorage());
         While whileTicket=new While(tableSQL.getTicketDBTable(),dataBaseConnection.getStatement(),fileName.getFileNameTicket(),path, whileFilm.getFilmStorage(), new TicketStorage());
-        Ticket.setID(whileTicket.getTicketStorage().getList().size());
-        Film.setID(whileFilm.getFilmStorage().getList().size());
+        Ticket.setID(whileTicket.getTicketStorage().returnID());
+        Film.setID(whileFilm.getFilmStorage().returnID());
         Film film=new Film("Frozen", 6);
         InsertSQLData insertSQLDataFilm=new InsertSQLData(dataBaseConnection,tableSQL,film);
         Ticket ticket=new Ticket(film,103,20);
@@ -271,5 +272,76 @@ public class AllTest {
         While whileFilm=new While(tableSQL.getFilmDBTable(),dataBaseConnection.getStatement(),fileName.getFileNameFilm(),path,new FilmStorage());
         While whileTicket=new While(tableSQL.getTicketDBTable(),dataBaseConnection.getStatement(),fileName.getFileNameTicket(),path,whileFilm.getFilmStorage(),new TicketStorage());
         assertEquals("TK1",whileTicket.getTicketStorage().getIDlist().get(0));
+    }
+
+    @Test
+    void loginSuccessful() throws IOException {
+        try (InputStream inputStream = MainTest.class.getResourceAsStream("/LoginTrue")) {
+            Scanner scanner = new Scanner(inputStream);
+            Main main = new Main(scanner);
+            String loginName = main.getString();
+            String password = main.getString();
+            DataBaseConnection dataBaseConnection = new DataBaseConnection(DBURL, DBUser, DBPassword);
+            TablesSQL tableSQL = new TablesSQL("admin", "film", "ticket");
+            FileName fileName = new FileName("adminTest", "filmTest", "ticketTest");
+            LoadDataSQLSaveToBinAndTxtFile localDataSQL = new LoadDataSQLSaveToBinAndTxtFile(tableSQL, dataBaseConnection, fileName, path);
+            assertTrue(main.login(localDataSQL.getWhileLooplists().get(0).getAdministratorStorage().getList(), loginName, password));
+        }
+    }
+
+    @Test
+    void loginFalseLoginName () throws IOException {
+        try (InputStream inputStream = MainTest.class.getResourceAsStream("/LoginFalseLoginName")) {
+            Scanner scanner = new Scanner(inputStream);
+            Main main = new Main(scanner);
+            String loginName = main.getString();
+            String password = main.getString();
+            DataBaseConnection dataBaseConnection = new DataBaseConnection(DBURL, DBUser, DBPassword);
+            TablesSQL tableSQL = new TablesSQL("admin", "film", "ticket");
+            FileName fileName = new FileName("adminTest", "filmTest", "ticketTest");
+            LoadDataSQLSaveToBinAndTxtFile localDataSQL = new LoadDataSQLSaveToBinAndTxtFile(tableSQL, dataBaseConnection, fileName, path);
+            assertFalse(main.login(localDataSQL.getWhileLooplists().get(0).getAdministratorStorage().getList(), loginName, password));
+        }
+    }
+
+    @Test
+    void loginFalsePassword () throws IOException {
+        try (InputStream inputStream = MainTest.class.getResourceAsStream("/LoginFalsePassword")) {
+            Scanner scanner = new Scanner(inputStream);
+            Main main = new Main(scanner);
+            String loginName = main.getString();
+            String password = main.getString();
+            DataBaseConnection dataBaseConnection = new DataBaseConnection(DBURL, DBUser, DBPassword);
+            TablesSQL tableSQL = new TablesSQL("admin", "film", "ticket");
+            FileName fileName = new FileName("adminTest", "filmTest", "ticketTest");
+            LoadDataSQLSaveToBinAndTxtFile localDataSQL = new LoadDataSQLSaveToBinAndTxtFile(tableSQL, dataBaseConnection, fileName, path);
+            assertFalse(main.login(localDataSQL.getWhileLooplists().get(0).getAdministratorStorage().getList(), loginName, password));
+        }
+    }
+
+    @Test
+    void addAdminByGUI() throws Exception{
+        DataBaseConnection dataBaseConnection=new DataBaseConnection(DBURL,DBUser,DBPassword);
+        TablesSQL tableSQL=new TablesSQL("admin", "film", "ticket");
+        FileName fileName=new FileName("mainAddAdminTest", "filmTest", "ticketTest");
+        LoadDataSQLSaveToBinAndTxtFile localDataSQL= new LoadDataSQLSaveToBinAndTxtFile(tableSQL,dataBaseConnection,fileName,path);
+        int localDataSQLBefore=localDataSQL.getWhileLooplists().get(0).getAdministratorStorage().getList().size();
+        try (InputStream inputStream = MainTest.class.getResourceAsStream("/addAdminByGUI")) {
+            Scanner scanner = new Scanner(inputStream);
+            Main main = new Main(scanner);
+            String FirstName=main.getString();
+            //String FirstName = JOptionPane.showInputDialog("Enter Your First Name:");
+            String LastName=main.getString();
+            //String LastName = JOptionPane.showInputDialog("Enter Your Last Name:");
+            String AdministratorNickName=main.getString();
+            //String AdministratorNickName = JOptionPane.showInputDialog("Enter Your Nick Name:");
+            //String AdminPassword = JOptionPane.showInputDialog("Enter Your Password");
+            String AdminPassword=main.getString();
+            main.addAdmin(main,FirstName,LastName,AdministratorNickName,AdminPassword,localDataSQL.getWhileLooplists().get(0).getAdministratorStorage(),fileName,path,dataBaseConnection,tableSQL);
+            localDataSQL= new LoadDataSQLSaveToBinAndTxtFile(tableSQL,dataBaseConnection,fileName,path);
+            assertEquals(localDataSQLBefore+1,localDataSQL.getWhileLooplists().get(0).getAdministratorStorage().getList().size());
+            String REMOVE="delete from admin where administratorID='AD2';";
+            dataBaseConnection.getStatement().execute(REMOVE);
+        }
     }
 }

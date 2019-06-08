@@ -382,7 +382,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AllTest">
+  <component name="RunManager" selected="JUnit.MainTest">
     <configuration name="AllTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="film_konsollapplikation" />
       <option name="PACKAGE_NAME" value="" />
@@ -433,8 +433,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AllTest" />
         <item itemvalue="JUnit.MainTest" />
+        <item itemvalue="JUnit.AllTest" />
         <item itemvalue="JUnit.AllTest.insertSQLDataTicket" />
         <item itemvalue="JUnit.AllTest.insertSQLDataFilm" />
         <item itemvalue="JUnit.MainTest.insertSQLDataFilm" />
