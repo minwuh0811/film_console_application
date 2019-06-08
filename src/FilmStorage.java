@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public class FilmStorage extends Storage implements FilmInterface {
     private Film film;
     private ArrayList<Film> list=new ArrayList<>();
+    private String string="FM";
 
     public FilmStorage(){
 
@@ -21,10 +22,10 @@ public class FilmStorage extends Storage implements FilmInterface {
             String loop = string + n;
             if (!IDlist.get(n-1).equals(loop)) {
                 Result = n;
-                break;
+                return Result;
             }
         }
-        return Result;
+        return Result=length+1;
     }
 
 

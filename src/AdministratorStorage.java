@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public class AdministratorStorage extends Storage implements AdministratorInterface  {
     private Administrator administrator;
     private ArrayList<Administrator> list=new ArrayList<>();
+    private String string="AD";
 
     public AdministratorStorage() {
 
