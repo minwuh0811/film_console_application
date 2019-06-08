@@ -49,7 +49,7 @@ public class MainTest {
         TablesSQL tableSQL=new TablesSQL("admin", "film", "ticket");
         FileName fileName=new FileName("adminInsertTest", "filmInsertTest", "ticketInsertTest");
         While whileFilm=new While(tableSQL.getFilmDBTable(),dataBaseConnection.getStatement(),fileName.getFileNameFilm(),path,new FilmStorage());
-        Film.setID(whileFilm.getFilmStorage().getList().size());
+        Film.setID(whileFilm.getFilmStorage().returnID());
         Film film=new Film("Frozen", 6);
         InsertSQLData insertSQLData=new InsertSQLData(dataBaseConnection,tableSQL,film);
         LoadDataSQLSaveToBinAndTxtFile localDataSQL= new LoadDataSQLSaveToBinAndTxtFile(tableSQL,dataBaseConnection,fileName,path);
@@ -65,8 +65,8 @@ public class MainTest {
         FileName fileName=new FileName("adminInsertTest", "filmInsertTest", "ticketInsertTest");
         While whileFilm=new While(tableSQL.getFilmDBTable(),dataBaseConnection.getStatement(),fileName.getFileNameTicket(),path,new FilmStorage());
         While whileTicket=new While(tableSQL.getTicketDBTable(),dataBaseConnection.getStatement(),fileName.getFileNameTicket(),path, whileFilm.getFilmStorage(), new TicketStorage());
-        Ticket.setID(whileTicket.getTicketStorage().getList().size());
-        Film.setID(whileFilm.getFilmStorage().getList().size());
+        Ticket.setID(whileTicket.getTicketStorage().returnID());
+        Film.setID(whileFilm.getFilmStorage().returnID());
         Film film=new Film("Frozen", 6);
         InsertSQLData insertSQLDataFilm=new InsertSQLData(dataBaseConnection,tableSQL,film);
         Ticket ticket=new Ticket(film,103,20);
@@ -134,4 +134,6 @@ public class MainTest {
             assertFalse(main.login(localDataSQL.getWhileLooplists().get(0).getAdministratorStorage().getList(), loginName, password));
         }
     }
+
+
 }
