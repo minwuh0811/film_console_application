@@ -359,6 +359,15 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.AllTest">
+    <configuration name="AdministratorStorageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="film_konsollapplikation" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AdministratorStorageTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AllTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="film_konsollapplikation" />
       <option name="PACKAGE_NAME" value="" />
@@ -373,16 +382,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="FilmStorageTest" />
       <option name="METHOD_NAME" value="returnFirstMissingIDForFilm" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ticketStorageTest.removeTicket" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="film_konsollapplikation" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ticketStorageTest" />
-      <option name="METHOD_NAME" value="removeTicket" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -411,10 +410,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AllTest" />
+        <item itemvalue="JUnit.AdministratorStorageTest" />
         <item itemvalue="JUnit.ticketStorageTest.returnFirstMissingIDForTicket" />
         <item itemvalue="JUnit.FilmStorageTest.returnFirstMissingIDForFilm" />
         <item itemvalue="JUnit.ticketStorageTest.searchTicket" />
-        <item itemvalue="JUnit.ticketStorageTest.removeTicket" />
       </list>
     </recent_temporary>
   </component>
@@ -879,9 +878,9 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/film_konsollapplikation$MainTest_localDataTreeTablesloaded.ic" NAME="MainTest.localDataTreeTablesloaded Coverage Results" MODIFIED="1559864396151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/film_konsollapplikation$AllTest.ic" NAME="AllTest Coverage Results" MODIFIED="1560025645506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/film_konsollapplikation$AdministratorStorageTest.ic" NAME="AdministratorStorageTest Coverage Results" MODIFIED="1559682617266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/film_konsollapplikation$AllTest.ic" NAME="AllTest Coverage Results" MODIFIED="1560026386550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/film_konsollapplikation$MainTest.ic" NAME="MainTest Coverage Results" MODIFIED="1559944879065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/film_konsollapplikation$AdministratorStorageTest.ic" NAME="AdministratorStorageTest Coverage Results" MODIFIED="1560026357794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/film_konsollapplikation$WhileTest.ic" NAME="WhileTest Coverage Results" MODIFIED="1559946664917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
