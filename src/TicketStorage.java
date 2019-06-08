@@ -1,26 +1,30 @@
 import java.io.*;
 import java.util.ArrayList;
 
-public class ticketStorage {
-    private ticket ticket;
-    private ArrayList<ticket> ticketlist=new ArrayList<>();
-    private String file_name;
-    private String path;
+public class TicketStorage extends Storage {
+    private Ticket ticket;
+    private ArrayList<Ticket> list=new ArrayList<>();
 
-    public ticketStorage(){}
+    public TicketStorage(){}
 
-    public ticketStorage(String file_name, String path) {
-        this.file_name=file_name;
-        this.path=path;
+    public TicketStorage(String file_name, String path, String string) {
+        super(file_name,path,string);
         LoadTicketFile(file_name,path);
     }
 
-    public ticket getTicket() {
+    public Ticket getTicket() {
         return ticket;
     }
 
-    public ArrayList<ticket> getTicketlist() {
-        return ticketlist;
+    public ArrayList<String> getIDlist() {
+            for (Ticket ticket: list) {
+                IDlist.add(ticket.getTicketID());
+            }
+        return IDlist;
+    }
+
+    public ArrayList<Ticket> getList() {
+        return list;
     }
 
     private void saveToTicketFile(String file_name, String path) {
@@ -30,25 +34,20 @@ public class ticketStorage {
         String file2=file_name+".txt";
         String path_txt = path + java.io.File.separator + file2;
         java.io.File file = new java.io.File(path_txt);
-        int length=ticketlist.size();
+        int length=list.size();
         String text="";
         for (int i=0; i<length; i++) {
-            text += "" + ticketlist.get(i).getTicketID() + ' '
-                    + ticketlist.get(i).getFilm().getFilmID() + ' '
-                    + ticketlist.get(i).getPrice() + ' '
-                    + ticketlist.get(i).TotalofTicket + '\n';
+            text += "" + list.get(i).getTicketID() + ' '
+                    + list.get(i).getFilm().getFilmID() + ' '
+                    + list.get(i).getPrice() + ' '
+                    + list.get(i).TotalofTicket + '\n';
         }
-
-        try (FileWriter filewriter = new FileWriter(file)) {
-            Repository repository=new Repository_Class(filewriter);
-            Main.WriteTextFile(repository,text);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Repository_Class repository= new Repository_Class();
+        repository.SaveTofile(file,text);
 
         try (ObjectOutputStream out =
                      new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(file_Customer)))) {
-            out.writeObject(ticketlist);
+            out.writeObject(list);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -62,7 +61,7 @@ public class ticketStorage {
         java.io.File file_Customer = new java.io.File(path);
         try (ObjectInputStream in =
                      new ObjectInputStream(new BufferedInputStream(new FileInputStream(file_Customer)))) {
-            ticketlist = (ArrayList<ticket>) in.readObject();
+            list = (ArrayList<Ticket>) in.readObject();
         } catch (FileNotFoundException e) {
 
         } catch (IOException e) {
@@ -70,16 +69,11 @@ public class ticketStorage {
         } catch (ClassNotFoundException e) {
 
         }
-        try {
-            Administrator.setID(ticketlist.size());
-        } catch ( java.lang.IndexOutOfBoundsException e){
-            Administrator.setID(0);
-        }
-
+        getIDlist();
     }
 
-    public void searchTicket(String filmID, ArrayList<ticket> ticketlist) {
-        for (ticket ticket : ticketlist) {
+    public void searchTicket(String filmID, ArrayList<Ticket> ticketlist) {
+        for (Ticket ticket : ticketlist) {
             if (ticket.getFilm().getFilmID() .equals(filmID)) {
                 this.ticket = ticket;
             }
@@ -91,12 +85,28 @@ public class ticketStorage {
 //        saveToOrderSearchFile();
     }
 
-    public void addTicketDBSQL(ticket ticket) {
-        ticketlist.add(ticket);
+
+    public void addTicketDBSQL(Ticket ticket) {
+        list.add(ticket);
+        IDlist.add(ticket.getTicketID());
     }
 
-    public void removeTicket(ticket ticket) {
-        ticketlist.remove(ticket);
+    public void removeTicket(Ticket ticket) {
+        list.remove(ticket);
     }
+
+    public int returnID() {
+        int length = IDlist.size();
+        int Result = -1;
+        for (int n = 1; n <= length; n++) {
+            String loop = string + n;
+            if (!IDlist.get(n-1).equals(loop)) {
+                Result = n;
+                break;
+            }
+        }
+        return Result;
+    }
+
 }
 
