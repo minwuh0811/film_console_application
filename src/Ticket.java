@@ -1,32 +1,49 @@
 import java.io.Serializable;
 
-public class ticket implements Serializable {
+public class Ticket implements Serializable {
     private static int ID;
     private String ticketID;
-    private film film;
-    private double price;
+    private Film film;
+    private int price;
     private int numberOfTicket;
     static int TotalofTicket;
     public static final long serialVersionUID = 3L;
 
-    public ticket(film film, int numberOfTicket){
+    Ticket(){
+
+    }
+
+    public Ticket(Film film, int numberofTicket){
         this.film=film;
+        this.numberOfTicket=numberofTicket;
         TotalofTicket-=numberOfTicket;
     }
 
-    public ticket(film film, double price, int totalofTicket) {
-        ID+=1;
-        this.ticketID="TK"+ID;
+    public Ticket(Film film, int price, int totalofTicket) {
+        ID++;
+        this.ticketID="TK"+ ID;
         this.film=film;
         this.price=price;
         TotalofTicket=totalofTicket;
     }
 
-    public ticket(String ticketID, film film, double price, int totalofTicket) {
+    public Ticket(String ticketID, Film film, int price, int totalofTicket) {
         this.ticketID=ticketID;
         this.film=film;
         this.price=price;
         TotalofTicket=totalofTicket;
+    }
+
+    public int getNumberOfTicket() {
+        return numberOfTicket;
+    }
+
+    public static int getID() {
+        return ID;
+    }
+
+    public static void setID(int ID) {
+        Ticket.ID = ID;
     }
 
     public String getTicketID() {
@@ -37,28 +54,20 @@ public class ticket implements Serializable {
         this.ticketID = ticketID;
     }
 
-    public film getFilm() {
+    public Film getFilm() {
         return film;
     }
 
-    public void setFilm(film film) {
+    public void setFilm(Film film) {
         this.film = film;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
-    }
-
-    public int getNumberOfTicket() {
-        return numberOfTicket;
-    }
-
-    public void setNumberOfTicket(int numberOfTicket) {
-        this.numberOfTicket = numberOfTicket;
     }
 
 }
