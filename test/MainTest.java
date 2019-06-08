@@ -135,5 +135,63 @@ public class MainTest {
         }
     }
 
+    @Test
+    void addAdminByGUI() throws Exception{
+        DataBaseConnection dataBaseConnection=new DataBaseConnection(DBURL,DBUser,DBPassword);
+        TablesSQL tableSQL=new TablesSQL("admin", "film", "ticket");
+        FileName fileName=new FileName("mainAddAdminTest", "filmTest", "ticketTest");
+        LoadDataSQLSaveToBinAndTxtFile localDataSQL= new LoadDataSQLSaveToBinAndTxtFile(tableSQL,dataBaseConnection,fileName,path);
+        int localDataSQLBefore=localDataSQL.getWhileLooplists().get(0).getAdministratorStorage().getList().size();
+        try (InputStream inputStream = MainTest.class.getResourceAsStream("/addAdminByGUI")) {
+            Scanner scanner = new Scanner(inputStream);
+            Main main = new Main(scanner);
+            String FirstName=main.getString();
+            //String FirstName = JOptionPane.showInputDialog("Enter Your First Name:");
+            String LastName=main.getString();
+            //String LastName = JOptionPane.showInputDialog("Enter Your Last Name:");
+            String AdministratorNickName=main.getString();
+            //String AdministratorNickName = JOptionPane.showInputDialog("Enter Your Nick Name:");
+            //String AdminPassword = JOptionPane.showInputDialog("Enter Your Password");
+            String AdminPassword=main.getString();
+            main.addAdmin(main,FirstName,LastName,AdministratorNickName,AdminPassword,localDataSQL.getWhileLooplists().get(0).getAdministratorStorage(),fileName,path,dataBaseConnection,tableSQL);
+            localDataSQL= new LoadDataSQLSaveToBinAndTxtFile(tableSQL,dataBaseConnection,fileName,path);
+            assertEquals(localDataSQLBefore+1,localDataSQL.getWhileLooplists().get(0).getAdministratorStorage().getList().size());
+            String REMOVE="delete from admin where administratorID='AD2';";
+            dataBaseConnection.getStatement().execute(REMOVE);
+        }
+    }
+
+    @Test
+    void addFilmByGUI() throws Exception {
+        DataBaseConnection dataBaseConnection = new DataBaseConnection(DBURL, DBUser, DBPassword);
+        TablesSQL tableSQL = new TablesSQL("admin", "film", "ticket");
+        FileName fileName = new FileName("AdminTest", "mainAddFilmTest", "mainAddTicketTest");
+        LoadDataSQLSaveToBinAndTxtFile localDataSQL = new LoadDataSQLSaveToBinAndTxtFile(tableSQL, dataBaseConnection, fileName, path);
+        int localDataSQLBefore = localDataSQL.getWhileLooplists().get(1).getFilmStorage().getList().size();
+        try (InputStream inputStream = MainTest.class.getResourceAsStream("/addFilmByGUI")) {
+            Scanner scanner = new Scanner(inputStream);
+            Main main = new Main(scanner);
+            String FilmName=main.getString();
+            System.out.println("Enter Film Name:" + FilmName);
+            //String AgeLimitation = JOptionPane.showInputDialog("What is the AgeLimitation:");
+            String AgeLimitation=main.getString();
+            int ageLimitation = Integer.parseInt(AgeLimitation);
+            System.out.println("What is the AgeLimitation:" + AgeLimitation);
+            String NumberOfticket=main.getString();
+            int numberOfTicket = Integer.parseInt(NumberOfticket);
+            System.out.println("What is the number of tickets?" +NumberOfticket );
+            //String price = JOptionPane.showInputDialog("What is the price?");
+            String price =main.getString();
+            int PRICE = Integer.parseInt(price);
+            System.out.println("What is the price?" + price);
+            main.addFilm(main,FilmName,ageLimitation,localDataSQL.getWhileLooplists().get(1).getFilmStorage(),fileName,path,dataBaseConnection,tableSQL,localDataSQL.getWhileLooplists().get(2).getTicketStorage(),numberOfTicket,PRICE);
+            localDataSQL = new LoadDataSQLSaveToBinAndTxtFile(tableSQL, dataBaseConnection, fileName, path);
+            assertEquals(localDataSQLBefore + 1, localDataSQL.getWhileLooplists().get(1).getFilmStorage().getList().size());
+            String REMOVEFilm = "delete from film where filmName='Test';";
+            dataBaseConnection.getStatement().execute(REMOVEFilm);
+            String REMOVETicket = "delete from ticket where filmID='FM2';";
+            dataBaseConnection.getStatement().execute(REMOVETicket);
+        }
+    }
 
 }
