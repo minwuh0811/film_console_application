@@ -90,16 +90,6 @@ public class Main {
                                         System.out.println("What is the AgeLimitation:");
                                         String AgeLimitation=main.getString();
                                         int ageLimitation = Integer.parseInt(AgeLimitation);
-                                        Film.setID(filmStorageBin.returnID());
-                                        Film newFilm = new Film(FilmName, ageLimitation);
-                                        filmStorageBin.addFilmDBSQL(newFilm);
-                                        filmStorageBin.close(fileName.getFileNameFilm(), path);
-                                        try {
-                                            InsertSQLData insertSQLData=new InsertSQLData(dataBaseConnection,tableSQL,newFilm);
-                                        } catch (Exception e) {
-                                            continue;
-                                        }
-                                        //String NumberOfticket = JOptionPane.showInputDialog("What is the number of tickets?");
                                         System.out.println("What is the number of tickets?");
                                         String NumberOfticket=main.getString();
                                         int numberOfTicket = Integer.parseInt(NumberOfticket);
@@ -107,15 +97,7 @@ public class Main {
                                         System.out.println("What is the price?");
                                         String price =main.getString();
                                         int PRICE = Integer.parseInt(price);
-                                        Ticket.setID(ticketStorageBin.returnID());
-                                        Ticket newTicket = new Ticket(newFilm, PRICE, numberOfTicket);
-                                        ticketStorageBin.addTicketDBSQL(newTicket);
-                                        ticketStorageBin.close(fileName.getFileNameTicket(), path);
-                                        try {
-                                            InsertSQLData insertSQLData=new InsertSQLData(dataBaseConnection, tableSQL, newTicket);
-                                        } catch (Exception e) {
-                                            continue;
-                                        }
+                                        main.addFilm(main,FilmName,ageLimitation,filmStorageBin,fileName,path,dataBaseConnection,tableSQL,ticketStorageBin,numberOfTicket,PRICE);
                                         break;
                                     case (3):
                             /*            control = true;
@@ -245,6 +227,28 @@ public class Main {
         administratorStorage.close(fileName.getFileNameTicket(), path);
         try {
             InsertSQLData insertSQLData= new InsertSQLData(dataBaseConnection,tableSQL,administratorNew);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public void addFilm(Main main, String FilmName,int ageLimitation, FilmStorage filmStorage, FileName fileName, String path, DataBaseConnection dataBaseConnection, TablesSQL tableSQL, TicketStorage ticketStorage, int numberOfTicket,int price ) {
+        //String FilmName = JOptionPane.showInputDialog("Enter Film Name:");
+        Film.setID(filmStorage.returnID());
+        Film newFilm = new Film(FilmName, ageLimitation);
+        filmStorage.addFilmDBSQL(newFilm);
+        filmStorage.close(fileName.getFileNameFilm(), path);
+        try {
+            InsertSQLData insertSQLData=new InsertSQLData(dataBaseConnection,tableSQL,newFilm);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        Ticket.setID(ticketStorage.returnID());
+        Ticket newTicket = new Ticket(newFilm, price, numberOfTicket);
+        ticketStorage.addTicketDBSQL(newTicket);
+        ticketStorage.close(fileName.getFileNameTicket(), path);
+        try {
+            InsertSQLData insertSQLData=new InsertSQLData(dataBaseConnection, tableSQL, newTicket);
         } catch (Exception e) {
             System.out.println(e);
         }
