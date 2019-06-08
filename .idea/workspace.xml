@@ -4,13 +4,7 @@
     <list default="true" id="b7835741-caab-4645-ac79-a232f2928cca" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/test/Resources/addAdminByGUI" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AdministratorStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AdministratorStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Film.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FilmStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FilmStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Storage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TicketStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicketStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/AllTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AllTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/MainTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/Resources/LoginSuccess" beforeDir="false" afterPath="$PROJECT_DIR$/test/Resources/LoginTrue" afterDir="false" />
@@ -23,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="37" />
+    <option name="myElementSize" value="25" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -96,6 +90,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2872">
+              <caret line="238" selection-start-line="238" selection-end-line="238" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/MainTest.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -155,7 +161,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TicketStorage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
@@ -208,18 +214,6 @@
               <folding>
                 <element signature="e#4003#4004#0" expanded="true" />
                 <element signature="e#4046#4047#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/FilmStorageTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -466,21 +460,7 @@
       <workItem from="1559908711733" duration="5969000" />
       <workItem from="1559942651227" duration="11008000" />
       <workItem from="1560005469149" duration="1722000" />
-      <workItem from="1560022295780" duration="11035000" />
-    </task>
-    <task id="LOCAL-00001" summary="Add Administrator, Administrator login, Administrator Add New Ticket.">
-      <created>1559595141022</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1559595141022</updated>
-    </task>
-    <task id="LOCAL-00002" summary="updated serialVersionUID = 1L &#10;one Constructor for add new Administrator&#10;One Constructor for load data from MySQL DataBase">
-      <created>1559595272773</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1559595272773</updated>
+      <workItem from="1560022295780" duration="11284000" />
     </task>
     <task id="LOCAL-00003" summary="updated serialVersionUID = 3L &#10;one Constructor for create new Film&#10;One Constructor for load data from MySQL DataBase">
       <created>1559595314876</created>
@@ -804,13 +784,31 @@
       <option name="project" value="LOCAL" />
       <updated>1560028108050</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Add default string to &quot;AD&quot;, &quot;FM&quot; and &quot;TK&quot;&#10;fixed Return ID method to return correct ID">
+      <created>1560033720706</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1560033720706</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Add default string to &quot;AD&quot;, &quot;FM&quot; and &quot;TK&quot;&#10;fixed Return ID method to return correct ID">
+      <created>1560033734803</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1560033734804</updated>
+    </task>
+    <task id="LOCAL-00051" summary="set correct ID by Return ID method from Storage">
+      <created>1560033802122</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1560033802122</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AllTest_insertSQLDataFilm - 2019.06.09 at 00h 17m 14s.xml">
-      <configuration name="AllTest.insertSQLDataFilm" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="AllTest_insertSQLDataFilm - 2019.06.09 at 00h 18m 26s.xml">
       <configuration name="AllTest.insertSQLDataFilm" configurationId="JUnit" />
     </history-entry>
@@ -838,9 +836,12 @@
     <history-entry file="AllTest - 2019.06.09 at 00h 38m 10s.xml">
       <configuration name="AllTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="AllTest - 2019.06.09 at 00h 39m 46s.xml">
+      <configuration name="AllTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141565000" />
+    <option name="totallyTimeSpent" value="141814000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -910,8 +911,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Administrator can login" />
-    <MESSAGE value="Add While class to loaddata from MySQl Database" />
     <MESSAGE value="Add Object for DataBaseConnection" />
     <MESSAGE value="Object for SQLTables" />
     <MESSAGE value="Object for the Names of binary and TXT files" />
@@ -935,7 +934,9 @@
     <MESSAGE value="65% lines covered by Unit Tests" />
     <MESSAGE value="add unit test for login Successful" />
     <MESSAGE value="add unit test for login Failed by Wrong LoginName or Password" />
-    <option name="LAST_COMMIT_MESSAGE" value="add unit test for login Failed by Wrong LoginName or Password" />
+    <MESSAGE value="Add default string to &quot;AD&quot;, &quot;FM&quot; and &quot;TK&quot;&#10;fixed Return ID method to return correct ID" />
+    <MESSAGE value="set correct ID by Return ID method from Storage" />
+    <option name="LAST_COMMIT_MESSAGE" value="set correct ID by Return ID method from Storage" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1164,21 +1165,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="914">
-          <caret line="238" selection-start-line="238" selection-end-line="238" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#233#234#0" expanded="true" />
-            <element signature="e#263#264#0" expanded="true" />
-            <element signature="e#317#318#0" expanded="true" />
-            <element signature="e#355#356#0" expanded="true" />
-            <element signature="e#14166#15595#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/Resources/addAdminByGUI">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1340,6 +1326,16 @@
             <element signature="e#667#668#0" expanded="true" />
             <element signature="e#3033#3034#0" expanded="true" />
             <element signature="e#3068#3069#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2872">
+          <caret line="238" selection-start-line="238" selection-end-line="238" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

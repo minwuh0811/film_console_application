@@ -7,6 +7,15 @@ import java.util.Scanner;
 
 public class Main {
     private Scanner sc;
+    private boolean control=true;
+
+    public  boolean isControl() {
+        return control;
+    }
+
+    public  void setControl(boolean control) {
+        this.control = control;
+    }
 
     public Main(Scanner sc){
         this.sc=sc;
@@ -31,44 +40,19 @@ public class Main {
         AdministratorStorage administratorStorageBin = new AdministratorStorage(fileName.getFileNameAdmin(), path, "AD");
         FilmStorage filmStorageBin = new FilmStorage(fileName.getFileNameFilm(), path, "FM");
         TicketStorage ticketStorageBin = new TicketStorage(fileName.getFileNameTicket(), path, "TK");
-
+        while (main.isControl()) {
         System.out.println("Administrator Press 1\nUser Press 2\nExit Press 3");
         String string=main.getString();
         //String string = JOptionPane.showInputDialog("Administrator Press 1\nUser Press 2\nExit Press 3");
         int choice = Integer.parseInt(string);
-        boolean control = true;
-        while (control) {
             switch (choice) {
                 case (1):
                     //String admin = JOptionPane.showInputDialog("Add New Administrator Press 1\nAdministrator Login Press 2\nExit Press 3");
-                    System.out.println("Add New Administrator Press 1\nAdministrator Login Press 2\nExit Press 3");
+                    System.out.println("Administrator Login Press 1\nExit Press 2");
                     String admin=main.getString();
                     int admin_choice = Integer.parseInt(admin);
                     switch (admin_choice) {
                         case (1):
-                            System.out.println("Enter Your First Name:");
-                            String FirstName=main.getString();
-                            //String FirstName = JOptionPane.showInputDialog("Enter Your First Name:");
-                            System.out.println("Enter Your Last Name:");
-                            String LastName=main.getString();
-                            //String LastName = JOptionPane.showInputDialog("Enter Your Last Name:");
-                            System.out.println("Enter Your Nick Name:");
-                            String AdministratorNickName=main.getString();
-                            //String AdministratorNickName = JOptionPane.showInputDialog("Enter Your Nick Name:");
-                            //String AdminPassword = JOptionPane.showInputDialog("Enter Your Password");
-                            System.out.println("Enter Your Password");
-                            String AdminPassword=main.getString();
-                            Administrator.setID(administratorStorageBin.getList().size());
-                            Administrator administratorNew = new Administrator(FirstName, LastName, AdministratorNickName, AdminPassword);
-                            administratorStorageBin.addAdministratorSQLDB(administratorNew);
-                            administratorStorageBin.close(fileName.getFileNameTicket(), path);
-                            try {
-                                InsertSQLData insertSQLData= new InsertSQLData(dataBaseConnection,tableSQL,administratorNew);
-                            } catch (Exception e) {
-                                continue;
-                            }
-                            break;
-                        case (2):
                             //String loginName = JOptionPane.showInputDialog("Enter your login Name:");
                             System.out.println("Enter your login Name:");
                             String loginName=main.getString();
@@ -79,11 +63,26 @@ public class Main {
                                 //JOptionPane.showMessageDialog(null, "Login Successfully");
                                 System.out.println("Login Successfully");
                                 //String LoginChoice = JOptionPane.showInputDialog("Add a Film Press 1\nRemove a Film Press 2\nChange the Number of Ticket in the Storage Press 3\nExist 4");
-                                System.out.println("Add a Film Press 1\nRemove a Film Press 2\nChange the Number of Ticket in the Storage Press 3\nExist 4");
+                                System.out.println("Add New Administrator Press 1\nAdd a Film Press 2\nRemove a Film Press 3\nChange the Number of Ticket in the Storage Press 4\nExist 5");
                                 String LoginChoice=main.getString();
                                 int loginChoice = Integer.parseInt(LoginChoice);
                                 switch (loginChoice) {
                                     case (1):
+                                        System.out.println("Enter Your First Name:");
+                                        String FirstName=main.getString();
+                                        //String FirstName = JOptionPane.showInputDialog("Enter Your First Name:");
+                                        System.out.println("Enter Your Last Name:");
+                                        String LastName=main.getString();
+                                        //String LastName = JOptionPane.showInputDialog("Enter Your Last Name:");
+                                        System.out.println("Enter Your Nick Name:");
+                                        String AdministratorNickName=main.getString();
+                                        //String AdministratorNickName = JOptionPane.showInputDialog("Enter Your Nick Name:");
+                                        //String AdminPassword = JOptionPane.showInputDialog("Enter Your Password");
+                                        System.out.println("Enter Your Password");
+                                        String AdminPassword=main.getString();
+                                        main.addAdmin(main,FirstName,LastName,AdministratorNickName,AdminPassword,administratorStorageBin,fileName,path,dataBaseConnection,tableSQL);
+                                        break;
+                                    case (2):
                                         //String FilmName = JOptionPane.showInputDialog("Enter Film Name:");
                                         System.out.println("Enter Film Name:");
                                         String FilmName=main.getString();
@@ -91,7 +90,7 @@ public class Main {
                                         System.out.println("What is the AgeLimitation:");
                                         String AgeLimitation=main.getString();
                                         int ageLimitation = Integer.parseInt(AgeLimitation);
-                                        Film.setID(filmStorageBin.getList().size());
+                                        Film.setID(filmStorageBin.returnID());
                                         Film newFilm = new Film(FilmName, ageLimitation);
                                         filmStorageBin.addFilmDBSQL(newFilm);
                                         filmStorageBin.close(fileName.getFileNameFilm(), path);
@@ -108,7 +107,7 @@ public class Main {
                                         System.out.println("What is the price?");
                                         String price =main.getString();
                                         int PRICE = Integer.parseInt(price);
-
+                                        Ticket.setID(ticketStorageBin.returnID());
                                         Ticket newTicket = new Ticket(newFilm, PRICE, numberOfTicket);
                                         ticketStorageBin.addTicketDBSQL(newTicket);
                                         ticketStorageBin.close(fileName.getFileNameTicket(), path);
@@ -118,7 +117,7 @@ public class Main {
                                             continue;
                                         }
                                         break;
-                                    case (2):
+                                    case (3):
                             /*            control = true;
                                         while (control) {
                                             String FilmID = JOptionPane.showInputDialog("Enter the filmID which you want to remove");
@@ -151,7 +150,7 @@ public class Main {
                                             }
                                         }*/
                                         break;
-                                    case (3):
+                                    case (4):
                                         //String FilmID = JOptionPane.showInputDialog("Enter the filmID which you want to change the number of tickets in the storage");
                                         System.out.println("Enter the filmID which you want to change the number of tickets in the storage");
                                         String FilmID=main.getString();
@@ -164,7 +163,7 @@ public class Main {
                                         //JOptionPane.showMessageDialog(null, "FilmID: " + ticketStorageBin.getTicket().getFilm().getFilmID() + " FilmName: " + ticketStorageBin.getTicket().getFilm().getName() + " has " + ticketStorageBin.getTicket().TotalofTicket + " tickets left now.");
                                         System.out.println("FilmID: " + ticketStorageBin.getTicket().getFilm().getFilmID() + " FilmName: " + ticketStorageBin.getTicket().getFilm().getName() + " has " + ticketStorageBin.getTicket().TotalofTicket + " tickets left now.");
                                         break;
-                                    case (4):
+                                    case (5):
                                         //JOptionPane.showMessageDialog(null, "Exist");
                                         System.out.println("Exist");
                                         break;
@@ -174,7 +173,7 @@ public class Main {
                                 System.out.println("LoginName or Password not Exist");
                             }
                             break;
-                        case (3):
+                        case (2):
                             System.out.println("Exist");
                             break;
                     }
@@ -203,13 +202,13 @@ public class Main {
                             //String Mate = JOptionPane.showInputDialog("Do you have a mate with you? 1: Yes, 0: No");
                             System.out.println("Do you have a mate with you? 1: Yes, 0: No");
                             String Mate=main.getString();
+                            break;
                     }
-
                     break;
                 case (3):
                     //JOptionPane.showMessageDialog(null, "Exist");
                     System.out.println("Exist");
-                    control = false;
+                    main.setControl(false);
                     break;
             }
 
@@ -238,4 +237,16 @@ public class Main {
         return sc.nextLine();
     }
 
+
+    public void addAdmin(Main main, String FirstName, String LastName, String AdministratorNickName, String AdminPassword, AdministratorStorage administratorStorage, FileName fileName, String path, DataBaseConnection dataBaseConnection, TablesSQL tableSQL  ){
+        Administrator.setID(administratorStorage.getList().size());
+        Administrator administratorNew = new Administrator(FirstName, LastName, AdministratorNickName, AdminPassword);
+        administratorStorage.addAdministratorSQLDB(administratorNew);
+        administratorStorage.close(fileName.getFileNameTicket(), path);
+        try {
+            InsertSQLData insertSQLData= new InsertSQLData(dataBaseConnection,tableSQL,administratorNew);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 }
