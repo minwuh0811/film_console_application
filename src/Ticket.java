@@ -20,7 +20,6 @@ public class Ticket implements Serializable {
     }
 
     public Ticket(Film film, int price, int totalofTicket) {
-        ID++;
         this.ticketID="TK"+ ID;
         this.film=film;
         this.price=price;

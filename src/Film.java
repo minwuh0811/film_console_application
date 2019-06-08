@@ -11,7 +11,6 @@ public class Film implements Serializable {
     }
 
     public Film(String name, int limitofage) {
-        ID++;
         this.filmID="FM"+ID;
         this.name=name;
         this.limitofage=limitofage;
