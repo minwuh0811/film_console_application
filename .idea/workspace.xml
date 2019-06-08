@@ -6,12 +6,7 @@
       <change afterPath="$PROJECT_DIR$/test/Resources/getString" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Docker_file" beforeDir="false" afterPath="$PROJECT_DIR$/src/Docker_file" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FilmStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FilmStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository_Class.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository_Class.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/While.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/While.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ticketStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicketStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/AdministratorStorageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AdministratorStorageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/FilmStorageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/FilmStorageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/MainTest.java" afterDir="false" />
@@ -442,7 +437,7 @@
       <workItem from="1559908711733" duration="5969000" />
       <workItem from="1559942651227" duration="11008000" />
       <workItem from="1560005469149" duration="1722000" />
-      <workItem from="1560022295780" duration="3488000" />
+      <workItem from="1560022295780" duration="3744000" />
     </task>
     <task id="LOCAL-00001" summary="Add Administrator, Administrator login, Administrator Add New Ticket.">
       <created>1559595141022</created>
@@ -703,7 +698,42 @@
       <option name="project" value="LOCAL" />
       <updated>1560025996241</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Add method to return the ID for first missing ID">
+      <created>1560026056865</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1560026056865</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Using Scanner to send input from user">
+      <created>1560026109289</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1560026109289</updated>
+    </task>
+    <task id="LOCAL-00040" summary="add  savetofile method">
+      <created>1560026147858</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1560026147858</updated>
+    </task>
+    <task id="LOCAL-00041" summary="add one method to return the first missed ID">
+      <created>1560026197859</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1560026197859</updated>
+    </task>
+    <task id="LOCAL-00042" summary="corrected while object to load data from SQLDB">
+      <created>1560026260414</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1560026260414</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -739,7 +769,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134018000" />
+    <option name="totallyTimeSpent" value="134274000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -808,11 +838,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="do unit tests for public methods in AdministratorStorage class" />
-    <MESSAGE value="create UnitTest to test data loading from DATEBASE" />
-    <MESSAGE value="updated FilmStorage class remove duplicated method" />
-    <MESSAGE value="updated ticketStorage class by removing duplicated method" />
-    <MESSAGE value="Create UnitTests for FilmStorage class" />
     <MESSAGE value="Create UnitTests for ticketStorage class" />
     <MESSAGE value="debugged to add a new administrator" />
     <MESSAGE value="Set static ID after data loaded" />
@@ -833,7 +858,12 @@
     <MESSAGE value="Corrected static ID" />
     <MESSAGE value="Create parent storage object for film, admin and ticket" />
     <MESSAGE value="Extends from Storage object" />
-    <option name="LAST_COMMIT_MESSAGE" value="Extends from Storage object" />
+    <MESSAGE value="Add method to return the ID for first missing ID" />
+    <MESSAGE value="Using Scanner to send input from user" />
+    <MESSAGE value="add  savetofile method" />
+    <MESSAGE value="add one method to return the first missed ID" />
+    <MESSAGE value="corrected while object to load data from SQLDB" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrected while object to load data from SQLDB" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
