@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7835741-caab-4645-ac79-a232f2928cca" name="Default Changelist" comment="31 Unit Tests with line covered in main 24% (14% before)">
+    <list default="true" id="b7835741-caab-4645-ac79-a232f2928cca" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/src/AlterSQLData.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Print.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/TicketsList.java" afterDir="false" />
@@ -9,11 +9,8 @@
       <change afterPath="$PROJECT_DIR$/test/Resources/changeTicketNumber" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Docker_file" beforeDir="false" afterPath="$PROJECT_DIR$/src/Docker_file" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Film.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FilmStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FilmStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InsertSQLData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InsertSQLData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ticket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TicketStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicketStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/While.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/While.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/AllTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AllTest.java" afterDir="false" />
@@ -119,7 +116,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="247">
@@ -154,8 +151,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FilmStorage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="14" column="37" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="14" selection-end-column="37" />
+            <state relative-caret-position="221">
+              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#FilmStorage#0;class#FilmStorage#0" />
@@ -163,6 +160,15 @@
                 <element signature="e#961#962#0" expanded="true" />
                 <element signature="method#addFilmDBSQL#0;class#FilmStorage#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/InsertSQLData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="317">
+              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
             </state>
           </provider>
         </entry>
@@ -191,18 +197,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://65646587-bf2e-45a8-9d75-cf1d739828bb/schema/filmTest/table/film">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true">
-                <filter text="" />
-              </filtering>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TicketStorage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
@@ -313,7 +308,6 @@
         <option value="$PROJECT_DIR$/test/Resources/Docker_file" />
         <option value="$PROJECT_DIR$/src/Film.java" />
         <option value="$PROJECT_DIR$/test/Resources/changeTicketNumber" />
-        <option value="$PROJECT_DIR$/src/InsertSQLData.java" />
         <option value="$PROJECT_DIR$/test/AlterSQLDataTest.java" />
         <option value="$PROJECT_DIR$/src/AlterSQLData.java" />
         <option value="$PROJECT_DIR$/test/Resources/filmsAvailableThreeFilmChosen" />
@@ -331,6 +325,7 @@
         <option value="$PROJECT_DIR$/src/FilmStorage.java" />
         <option value="$PROJECT_DIR$/src/TicketsList.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/InsertSQLData.java" />
       </list>
     </option>
   </component>
@@ -500,28 +495,7 @@
       <workItem from="1559908711733" duration="5969000" />
       <workItem from="1559942651227" duration="11008000" />
       <workItem from="1560005469149" duration="1722000" />
-      <workItem from="1560022295780" duration="62920000" />
-    </task>
-    <task id="LOCAL-00009" summary="Interface for Mockito test">
-      <created>1559595687924</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1559595687924</updated>
-    </task>
-    <task id="LOCAL-00010" summary="fixed problem of loading data through MySQL and updated the binary and .TXT file after mysql data loading">
-      <created>1559662092015</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1559662092015</updated>
-    </task>
-    <task id="LOCAL-00011" summary="create DATABASE for testing using MySQL in Docker">
-      <created>1559682900313</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1559682900313</updated>
+      <workItem from="1560022295780" duration="63178000" />
     </task>
     <task id="LOCAL-00012" summary="create binary and TXT files to test addAdministrator method in AdministratorStorage class">
       <created>1559683101305</created>
@@ -845,7 +819,28 @@
       <option name="project" value="LOCAL" />
       <updated>1560036434591</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Move Price and the Number of ticket to Film Object">
+      <created>1560182163174</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1560182163174</updated>
+    </task>
+    <task id="LOCAL-00059" summary="updated search method for filmStorage object">
+      <created>1560182276524</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1560182276524</updated>
+    </task>
+    <task id="LOCAL-00060" summary="rewrite the Ticket Object">
+      <created>1560182344656</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1560182344656</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -881,7 +876,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193450000" />
+    <option name="totallyTimeSpent" value="193708000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -894,6 +889,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -959,9 +955,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="6 Unit Test for While Object to Load Data from each Table 90% method coverage and 88% lines coverage" />
-    <MESSAGE value="renamed" />
-    <MESSAGE value="added interface for Film" />
     <MESSAGE value="InsertSQLData object" />
     <MESSAGE value="Corrected static ID" />
     <MESSAGE value="Create parent storage object for film, admin and ticket" />
@@ -984,7 +977,10 @@
     <MESSAGE value="add AddFilm method in Main" />
     <MESSAGE value="Unit Test for add Film in Main through GUI" />
     <MESSAGE value="31 Unit Tests with line covered in main 24% (14% before)" />
-    <option name="LAST_COMMIT_MESSAGE" value="31 Unit Tests with line covered in main 24% (14% before)" />
+    <MESSAGE value="Move Price and the Number of ticket to Film Object" />
+    <MESSAGE value="updated search method for filmStorage object" />
+    <MESSAGE value="rewrite the Ticket Object" />
+    <option name="LAST_COMMIT_MESSAGE" value="rewrite the Ticket Object" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1234,13 +1230,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/InsertSQLData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="57" column="44" lean-forward="true" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/AllTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -1317,24 +1306,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ticket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1248#1249#0" expanded="true" />
-            <element signature="e#1285#1286#0" expanded="true" />
-            <element signature="e#1315#1316#0" expanded="true" />
-            <element signature="e#1342#1343#0" expanded="true" />
-            <element signature="e#1380#1381#0" expanded="true" />
-            <element signature="e#1412#1413#0" expanded="true" />
-            <element signature="e#1469#1470#0" expanded="true" />
-            <element signature="e#1521#1522#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/AlterSQLDataTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -1352,27 +1323,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FilmStorage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="37" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="14" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#FilmStorage#0;class#FilmStorage#0" />
-            <element signature="e#934#935#0" expanded="true" />
-            <element signature="e#961#962#0" expanded="true" />
-            <element signature="method#addFilmDBSQL#0;class#FilmStorage#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TicketStorage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1401,6 +1351,52 @@
             <element signature="e#14635#14636#0" expanded="true" />
             <element signature="e#14704#14705#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FilmStorage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#FilmStorage#0;class#FilmStorage#0" />
+            <element signature="e#934#935#0" expanded="true" />
+            <element signature="e#961#962#0" expanded="true" />
+            <element signature="method#addFilmDBSQL#0;class#FilmStorage#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InsertSQLData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ticket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1248#1249#0" expanded="true" />
+            <element signature="e#1285#1286#0" expanded="true" />
+            <element signature="e#1315#1316#0" expanded="true" />
+            <element signature="e#1342#1343#0" expanded="true" />
+            <element signature="e#1380#1381#0" expanded="true" />
+            <element signature="e#1412#1413#0" expanded="true" />
+            <element signature="e#1469#1470#0" expanded="true" />
+            <element signature="e#1521#1522#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TicketStorage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
