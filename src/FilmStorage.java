@@ -15,18 +15,18 @@ public class FilmStorage extends Storage implements FilmInterface {
         LoadFilmFile(file_name,path);
     }
 
-    public int returnID() {
-        int length = IDlist.size();
-        int Result = -1;
-        for (int n = 1; n <=length; n++) {
-            String loop = string + n;
-            if (!IDlist.get(n-1).equals(loop)) {
-                Result = n;
-                return Result;
-            }
-        }
-        return Result=length+1;
-    }
+//    public int returnID() {
+//        int length = IDlist.size();
+//        int Result = -1;
+//        for (int n = 1; n <=length; n++) {
+//            String loop = string + n;
+//            if (!IDlist.get(n-1).equals(loop)) {
+//                Result = n;
+//                return Result;
+//            }
+//        }
+//        return Result=length+1;
+//    }
 
 
     public ArrayList<String> getIDlist() {
@@ -51,7 +51,9 @@ public class FilmStorage extends Storage implements FilmInterface {
         for (int i=0; i<length; i++) {
             text += "" + list.get(i).getFilmID() + ' '
                     + list.get(i).getName() + ' '
-                    + list.get(i).getLimitofage() + '\n';
+                    + list.get(i).getLimitofage() + ' '
+                    + list.get(i).getPrice() + ' '
+                    + list.get(i).getTotalofTicket()+ '\n';
         }
 
         Repository_Class repository= new Repository_Class();
@@ -88,9 +90,6 @@ public class FilmStorage extends Storage implements FilmInterface {
         saveToFilmFile(file_name,path);
     }
 
-    public void removefilm(Film film) {
-        list.remove(film);
-    }
 
     public void addFilmDBSQL(Film film) {
         list.add(film);
@@ -101,13 +100,14 @@ public class FilmStorage extends Storage implements FilmInterface {
         return list;
     }
 
-    public void searchFilm(String filmID, ArrayList<Film> filmlist) {
+    public Film searchFilm(String filmID, ArrayList<Film> filmlist) {
         for (Film film : filmlist) {
             if (film.getFilmID().equals(filmID)) {
                 this.film=film;
+                return film;
             }
         }
-
+        return new Film();
     }
 
     }
