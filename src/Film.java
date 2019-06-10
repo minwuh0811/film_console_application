@@ -3,8 +3,11 @@ import java.io.Serializable;
 public class Film implements Serializable {
     private static int ID;
     private String filmID;
+    private int price=100;
+    private int TotalofTicket=20;
     private String name;
     private int limitofage;
+
     public static final long serialVersionUID = 2L;
 
     public Film() {
@@ -16,10 +19,12 @@ public class Film implements Serializable {
         this.limitofage=limitofage;
     }
 
-    public Film(String filmID, String name, int limitofage) {
+    public Film(String filmID, String name, int limitofage, int price, int totalofTicket) {
         this.filmID=filmID;
         this.name=name;
         this.limitofage=limitofage;
+        this.price=price;
+        setTotalofTicket(totalofTicket);
     }
 
     public static int getID() {
@@ -52,5 +57,21 @@ public class Film implements Serializable {
 
     public void setLimitofage(int limitofage) {
         this.limitofage = limitofage;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getTotalofTicket() {
+        return TotalofTicket;
+    }
+
+    public void setTotalofTicket(int totalofTicket) {
+        TotalofTicket = totalofTicket;
     }
 }
