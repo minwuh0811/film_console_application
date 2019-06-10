@@ -17,15 +17,6 @@ class FilmStorageTest {
         assertEquals(2,filmStorage.getList().size());
     }
 
-    @Test
-    void removefilm() {
-        FilmStorage filmStorage=new FilmStorage("filmRemoveTest",path,"FM");
-        Film film=new Film();
-        filmStorage.addFilmDBSQL(film);
-        filmStorage.removefilm(film);
-        assertEquals(1,filmStorage.getList().size());
-    }
-
 
     @Test
     void searchFilmByFilmID() {
