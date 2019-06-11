@@ -21,12 +21,12 @@ public class InsertSQLData {
         insertSQLDataFilm(film,tablesSQL,dataBaseConnection );
     }
 
-    public InsertSQLData(DataBaseConnection dataBaseConnection, TablesSQL tablesSQL, Ticket ticket) {
-        this.dataBaseConnection=dataBaseConnection;
-        this.tablesSQL=tablesSQL;
-        this.ticket=ticket;
-        insertSQLDataTicket(ticket,tablesSQL,dataBaseConnection );
-    }
+//    public InsertSQLData(DataBaseConnection dataBaseConnection, TablesSQL tablesSQL, Ticket ticket) {
+//        this.dataBaseConnection=dataBaseConnection;
+//        this.tablesSQL=tablesSQL;
+//        this.ticket=ticket;
+//        insertSQLDataTicket(ticket,tablesSQL,dataBaseConnection );
+//    }
 
     private static void insertSQLDataAdmin(Administrator administrator, TablesSQL tablesSQL, DataBaseConnection dataBaseConnection ) {
         try {
@@ -43,23 +43,23 @@ public class InsertSQLData {
             try {
                 Statement statement=dataBaseConnection.getStatement();
                 String string = String.format("INSERT INTO " + tablesSQL.getFilmDBTable() +
-                        " VALUES(\"%s\",\"%s\",\"%d\");", film.getFilmID(), film.getName(), film.getLimitofage());
+                        " VALUES(\"%s\",\"%s\",\"%d\",\"%d\",\"%d\");", film.getFilmID(), film.getName(), film.getLimitofage(),film.getPrice(),film.getTotalofTicket());
                 statement.execute(string);
             } catch (Exception e) {
                 System.out.println(e);
             }
         }
 
-        private static void insertSQLDataTicket(Ticket ticket,  TablesSQL tablesSQL, DataBaseConnection dataBaseConnection) {
-            try {
-                Statement statement=dataBaseConnection.getStatement();
-                String string = String.format("INSERT INTO " + tablesSQL.getTicketDBTable() +
-                        " VALUES(\"%s\",\"%s\", \"%d\",\"%d\");", ticket.getTicketID(), ticket.getFilm().getFilmID(), ticket.getPrice(), ticket.TotalofTicket);
-                statement.execute(string);
-            } catch (Exception e) {
-                System.out.println(e);
-            }
-        }
+//        private static void insertSQLDataTicket(Ticket ticket,  TablesSQL tablesSQL, DataBaseConnection dataBaseConnection) {
+//            try {
+//                Statement statement=dataBaseConnection.getStatement();
+////                String string = String.format("INSERT INTO " + tablesSQL.getTicketDBTable() +
+////                        " VALUES(\"%s\",\"%s\", \"%d\",\"%d\");", ticket.getTicketID(), ticket.getFilm().getFilmID(), ticket.getPrice(), ticket.TotalofTicket);
+////                statement.execute(string);
+//            } catch (Exception e) {
+//                System.out.println(e);
+//            }
+//        }
     }
 
 

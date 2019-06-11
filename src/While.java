@@ -36,7 +36,7 @@ public class While {
         }
     }
 
-    public While(String DBTable, Statement statement,String fileName, String path, FilmStorage filmStorage, TicketStorage ticketStorage){
+   /* public While(String DBTable, Statement statement,String fileName, String path, FilmStorage filmStorage, TicketStorage ticketStorage){
         this.fileName=fileName;
         this.path=path;
         this.filmStorage=filmStorage;
@@ -48,7 +48,7 @@ public class While {
         } catch (Exception e) {
             System.out.println(e);
         }
-    }
+    }*/
 
 
     public AdministratorStorage whileAdmin(String DBTable, Statement statement, String fileName, String path, AdministratorStorage administratorStorage) {
@@ -69,7 +69,7 @@ public class While {
         try {
             ResultSet resultSet = statement.executeQuery("select * from " + DBTable + ";");
             while (resultSet.next()) {
-                 Film film = new Film(resultSet.getString(1), resultSet.getString(2), resultSet.getInt(3));
+                 Film film = new Film(resultSet.getString(1), resultSet.getString(2), resultSet.getInt(3),resultSet.getInt(4),resultSet.getInt(5));
                  filmStorage.addFilmDBSQL(film);
             }
         filmStorage.close(fileName, path);
@@ -79,17 +79,17 @@ public class While {
         return filmStorage;
     }
 
-    public TicketStorage whileTicket(String DBTable, Statement statement, String fileName, String path, FilmStorage filmStorage,TicketStorage ticketStorage) throws Exception {
+/*    public TicketStorage whileTicket(String DBTable, Statement statement, String fileName, String path, FilmStorage filmStorage,TicketStorage ticketStorage) throws Exception {
         ResultSet resultSet = statement.executeQuery("select * from " + DBTable + ";");
         while (resultSet.next()) {
             String filmID = resultSet.getString(2);
             filmStorage.searchFilm(filmID, filmStorage.getList());
-            Ticket newTicket = new Ticket(resultSet.getString(1), filmStorage.getFilm(), resultSet.getInt(3), resultSet.getInt(4));
-            ticketStorage.addTicketDBSQL(newTicket);
+            //Ticket newTicket = new Ticket(resultSet.getString(1), filmStorage.getFilm(), resultSet.getInt(3), resultSet.getInt(4));
+            //ticketStorage.addTicketDBSQL(newTicket);
         }
-        ticketStorage.close(fileName, path);
+//        ticketStorage.close(fileName, path);
         return ticketStorage;
-    }
+    }*/
 
 
 

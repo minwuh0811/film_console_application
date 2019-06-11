@@ -1,4 +1,5 @@
 
+import javax.imageio.metadata.IIOMetadataNode;
 import java.io.FileNotFoundException;
 import java.sql.*;
 import java.util.ArrayList;
@@ -21,6 +22,8 @@ public class Main {
         this.sc=sc;
     }
 
+    public Main(){}
+
     public static void main(String[] args) {
         Main main=new Main(new Scanner(System.in));
         String path = System.getProperty("user.home")
@@ -28,7 +31,6 @@ public class Main {
                 + java.io.File.separator + "film_konsollapplikation"
                 + java.io.File.separator + "src";
         FileName fileName=new FileName("Administrator","Film", "Ticket" );
-
         // Load Data from MySQL and updated the binary and TXT file locally
         TablesSQL tableSQL= new TablesSQL("admin","film", "ticket");
         DataBaseConnection dataBaseConnection=new DataBaseConnection("jdbc:mysql://192.168.99.100:3306/db_film", "root", "password");
@@ -39,7 +41,7 @@ public class Main {
 
         AdministratorStorage administratorStorageBin = new AdministratorStorage(fileName.getFileNameAdmin(), path, "AD");
         FilmStorage filmStorageBin = new FilmStorage(fileName.getFileNameFilm(), path, "FM");
-        TicketStorage ticketStorageBin = new TicketStorage(fileName.getFileNameTicket(), path, "TK");
+
         while (main.isControl()) {
         System.out.println("Administrator Press 1\nUser Press 2\nExit Press 3");
         String string=main.getString();
@@ -63,7 +65,7 @@ public class Main {
                                 //JOptionPane.showMessageDialog(null, "Login Successfully");
                                 System.out.println("Login Successfully");
                                 //String LoginChoice = JOptionPane.showInputDialog("Add a Film Press 1\nRemove a Film Press 2\nChange the Number of Ticket in the Storage Press 3\nExist 4");
-                                System.out.println("Add New Administrator Press 1\nAdd a Film Press 2\nRemove a Film Press 3\nChange the Number of Ticket in the Storage Press 4\nExist 5");
+                                System.out.println("Add New Administrator Press 1\nAdd a Film Press 2\nChange the Number of Ticket in the Storage Press 3\nExist 4");
                                 String LoginChoice=main.getString();
                                 int loginChoice = Integer.parseInt(LoginChoice);
                                 switch (loginChoice) {
@@ -80,7 +82,7 @@ public class Main {
                                         //String AdminPassword = JOptionPane.showInputDialog("Enter Your Password");
                                         System.out.println("Enter Your Password");
                                         String AdminPassword=main.getString();
-                                        main.addAdmin(main,FirstName,LastName,AdministratorNickName,AdminPassword,administratorStorageBin,fileName,path,dataBaseConnection,tableSQL);
+                                        main.addAdmin(FirstName,LastName,AdministratorNickName,AdminPassword,administratorStorageBin,fileName,path,dataBaseConnection,tableSQL);
                                         break;
                                     case (2):
                                         //String FilmName = JOptionPane.showInputDialog("Enter Film Name:");
@@ -90,62 +92,21 @@ public class Main {
                                         System.out.println("What is the AgeLimitation:");
                                         String AgeLimitation=main.getString();
                                         int ageLimitation = Integer.parseInt(AgeLimitation);
-                                        System.out.println("What is the number of tickets?");
-                                        String NumberOfticket=main.getString();
-                                        int numberOfTicket = Integer.parseInt(NumberOfticket);
-                                        //String price = JOptionPane.showInputDialog("What is the price?");
-                                        System.out.println("What is the price?");
-                                        String price =main.getString();
-                                        int PRICE = Integer.parseInt(price);
-                                        main.addFilm(main,FilmName,ageLimitation,filmStorageBin,fileName,path,dataBaseConnection,tableSQL,ticketStorageBin,numberOfTicket,PRICE);
+                                        main.addFilm(FilmName,ageLimitation,filmStorageBin,fileName,path,dataBaseConnection,tableSQL);
                                         break;
                                     case (3):
-                            /*            control = true;
-                                        while (control) {
-                                            String FilmID = JOptionPane.showInputDialog("Enter the filmID which you want to remove");
-                                            filmStorageBin.searchFilm(FilmID, filmStorageBin.getList());
-                                            ticketStorageBin.searchTicket(FilmID, ticketStorageBin.getList());
-                                            String confirmation = JOptionPane.showInputDialog(("Is the film \"" + filmStorageBin.getFilm().getName()) + "\" you want to delete? 1: Yes, 0: No");
-                                            int confirmation_choice = Integer.parseInt(confirmation);
-                                            if (confirmation_choice == 1) {
-                                                filmStorageBin.removefilm(filmStorageBin.getFilm());
-                                                filmStorageBin.close(fileName.getFileNameFilm(), path);
-                                                try {
-                                                    removeSQLDataFilm(filmStorageBin.getFilm());
-                                                } catch (Exception e) {
-                                                    continue;
-                                                }
-                                                ticketStorageBin.removeTicket(ticketStorageBin.getTicket());
-                                                ticketStorageBin.close(fileNameTicket, path);
-                                                try {
-                                                    removeSQLDataTicket(ticketStorageBin.getTicket());
-                                                } catch (Exception e) {
-                                                    continue;
-                                                }
-                                                control = false;
-                                            } else if (confirmation_choice == 0) {
-                                                String delete_film = JOptionPane.showInputDialog("Cancel remove film? 1: Yes 0: No");
-                                                int delete_film_choice = Integer.parseInt(delete_film);
-                                                if (delete_film_choice == 1) {
-                                                    control = false;
-                                                }
-                                            }
-                                        }*/
-                                        break;
-                                    case (4):
                                         //String FilmID = JOptionPane.showInputDialog("Enter the filmID which you want to change the number of tickets in the storage");
                                         System.out.println("Enter the filmID which you want to change the number of tickets in the storage");
                                         String FilmID=main.getString();
-                                        ticketStorageBin.searchTicket(FilmID, ticketStorageBin.getList());
-                                        //String totalTicket = JOptionPane.showInputDialog("FilmID: " + ticketStorageBin.getTicket().getFilm().getFilmID() + " FilmName: " + ticketStorageBin.getTicket().getFilm().getName() + " has " + ticketStorageBin.getTicket().TotalofTicket + " tickets left.\nThe number of the tickets?");
-                                        System.out.println("FilmID: " + ticketStorageBin.getTicket().getFilm().getFilmID() + " FilmName: " + ticketStorageBin.getTicket().getFilm().getName() + " has " + ticketStorageBin.getTicket().TotalofTicket + " tickets left.\nThe number of the tickets?");
-                                        String totalTicket=main.getString();
-                                        int totalNumberTicket = Integer.parseInt(totalTicket);
-                                        ticketStorageBin.getTicket().TotalofTicket = totalNumberTicket;
-                                        //JOptionPane.showMessageDialog(null, "FilmID: " + ticketStorageBin.getTicket().getFilm().getFilmID() + " FilmName: " + ticketStorageBin.getTicket().getFilm().getName() + " has " + ticketStorageBin.getTicket().TotalofTicket + " tickets left now.");
-                                        System.out.println("FilmID: " + ticketStorageBin.getTicket().getFilm().getFilmID() + " FilmName: " + ticketStorageBin.getTicket().getFilm().getName() + " has " + ticketStorageBin.getTicket().TotalofTicket + " tickets left now.");
+                                        filmStorageBin.searchFilm(FilmID,filmStorageBin.getList());
+                                        System.out.println("Tickets "+ filmStorageBin.getFilm().getTotalofTicket() + " has left.");
+                                        System.out.println("The number of the tickets?");
+                                        String TotalNumberofTicket=main.getString();
+                                        int totalNumberTicket=Integer.parseInt(TotalNumberofTicket);
+                                        Film resultFilm=main.changeTicektNumber(FilmID,filmStorageBin,totalNumberTicket,dataBaseConnection,tableSQL);
+                                        System.out.println("FilmID: " + resultFilm.getFilmID() + " FilmName: " + resultFilm.getName() + " has " + resultFilm.getTotalofTicket() + " tickets left now.");
                                         break;
-                                    case (5):
+                                    case (4):
                                         //JOptionPane.showMessageDialog(null, "Exist");
                                         System.out.println("Exist");
                                         break;
@@ -162,28 +123,79 @@ public class Main {
                     break;
                 case (2):
                     //String User = JOptionPane.showInputDialog("Buy Ticket Press 1\nFilmList Press 2\nExit Press 3");
-                    System.out.println("Buy Ticket Press 1\nFilmList Press 2\nExit Press 3");
+                    System.out.println("Buy Ticket Press 1\nExit Press 2");
                     String User=main.getString();
                     int choice_user = Integer.parseInt(User);
                     switch (choice_user) {
                         case (1):
-                            //String FilmID = JOptionPane.showInputDialog("Enter FilmID");
-                            System.out.println("Enter FilmID");
-                            String FilmID =main.getString();
-                            //String userAge = JOptionPane.showInputDialog("What is your age?");
-                            System.out.println("What is your age?");
-                            String userAge=main.getString();
-                            int Age = Integer.parseInt(userAge);
-                            //String Discount = JOptionPane.showInputDialog("Do you have BonusCard? 1: Yes, 0: No");
-                            System.out.println("Do you have BonusCard? 1: Yes, 0: No");
-                            String Discount=main.getString();
-                            //String TicketNum = JOptionPane.showInputDialog("How Much Ticket Do you Need?");
-                            System.out.println("How Much Ticket Do you Need?");
-                            String TicketNum=main.getString();
-                            int ticketNum = Integer.parseInt(TicketNum);
-                            //String Mate = JOptionPane.showInputDialog("Do you have a mate with you? 1: Yes, 0: No");
-                            System.out.println("Do you have a mate with you? 1: Yes, 0: No");
-                            String Mate=main.getString();
+                            System.out.println("Choose the films from the list below.");
+                            Print print=new Print(filmStorageBin.getList());
+                            System.out.println("Choose films Press 1\nExist press 2");
+                            int chooseFilms=Integer.parseInt(main.getString());
+                            switch(chooseFilms) {
+                                case(1):
+                                    int n=1;
+                                    TicketStorage ticketStorage = new TicketStorage();
+                                    while (n<=3) {
+                                        ArrayList<String> FilmIDs = new ArrayList<>();
+                                        System.out.println("You can choose at most 3 Films. Enter the FilmID: \nPress 2 Exist");
+                                        String FilmID_1 = main.getString();
+                                        //String userAge = JOptionPane.showInputDialog("What is your age?");
+                                        if (!FilmID_1.equals("2")){
+                                            System.out.println("What is your age?");
+                                            int userAge = Integer.parseInt(main.getString());
+                                            if (userAge < 15) {
+                                                System.out.println("a mate with the kids? 1: Yes, 0: No");
+                                                int mate = Integer.parseInt(main.getString());
+                                                if (main.filmsAvailable(main.AgeLimitation(userAge, mate), FilmID_1, filmStorageBin)) {
+                                                    System.out.println("How many tickets you need?");
+                                                    int numberTicketBought = Integer.parseInt(main.getString());
+                                                    Film film_1 = filmStorageBin.searchFilm(FilmID_1, filmStorageBin.getList());
+                                                    Ticket ticket = new Ticket(film_1, numberTicketBought);
+                                                    try {
+                                                        AlterSQLData alterSQLData = new AlterSQLData(dataBaseConnection, tableSQL, film_1);
+                                                        alterSQLData.alterSQLDataFilm(film_1);
+                                                    } catch (Exception e) {
+                                                        System.out.println(e);
+                                                    }
+                                                    ticketStorage.addTicketDBSQL(ticket);
+                                                    System.out.println("Press 1 continues\nPress 2 to Exist");
+                                                    int continues = Integer.parseInt(main.getString());
+                                                    if (continues == 1) {
+                                                        n++;
+                                                    } else {
+                                                        n = 4;
+                                                    }
+                                                } else {
+                                                    System.out.println("Ops!! You can not Choose this film at your age");
+                                                }
+                                            }else {
+                                                System.out.println("How many tickets you need?");
+                                                int numberTicketBought = Integer.parseInt(main.getString());
+                                                Ticket ticket = new Ticket(filmStorageBin.searchFilm(FilmID_1, filmStorageBin.getList()), numberTicketBought);
+                                                ticketStorage.addTicketDBSQL(ticket);
+                                                System.out.println("Press 1 continues\nPress 2 to Exist");
+                                                int continues = Integer.parseInt(main.getString());
+                                                if (continues == 1) {
+                                                    n++;
+                                                } else {
+                                                    n = 4;
+                                                }
+                                            }
+                                        } else {n=4;}
+                                    }
+                                    System.out.println("The Tickets you booked as followed.");
+                                    System.out.println("");
+
+                                    System.out.println("Exist");
+                                    break;
+                                case(2):
+                                    System.out.println("Exist");
+                                    break;
+                            }
+
+                        case (2):
+                            System.out.println("Exist");
                             break;
                     }
                     break;
@@ -196,7 +208,6 @@ public class Main {
 
         }
     }
-
 
 
     public boolean login(ArrayList<Administrator> administratorslist, String login, String password) {
@@ -213,14 +224,11 @@ public class Main {
         repository.write(text);
     }
 
-
-
     public String getString() {
         return sc.nextLine();
     }
 
-
-    public void addAdmin(Main main, String FirstName, String LastName, String AdministratorNickName, String AdminPassword, AdministratorStorage administratorStorage, FileName fileName, String path, DataBaseConnection dataBaseConnection, TablesSQL tableSQL  ){
+    public void addAdmin(String FirstName, String LastName, String AdministratorNickName, String AdminPassword, AdministratorStorage administratorStorage, FileName fileName, String path, DataBaseConnection dataBaseConnection, TablesSQL tableSQL  ){
         Administrator.setID(administratorStorage.getList().size());
         Administrator administratorNew = new Administrator(FirstName, LastName, AdministratorNickName, AdminPassword);
         administratorStorage.addAdministratorSQLDB(administratorNew);
@@ -232,7 +240,7 @@ public class Main {
         }
     }
 
-    public void addFilm(Main main, String FilmName,int ageLimitation, FilmStorage filmStorage, FileName fileName, String path, DataBaseConnection dataBaseConnection, TablesSQL tableSQL, TicketStorage ticketStorage, int numberOfTicket,int price ) {
+    public void addFilm(String FilmName,int ageLimitation, FilmStorage filmStorage, FileName fileName, String path, DataBaseConnection dataBaseConnection, TablesSQL tableSQL ) {
         //String FilmName = JOptionPane.showInputDialog("Enter Film Name:");
         Film.setID(filmStorage.returnID());
         Film newFilm = new Film(FilmName, ageLimitation);
@@ -243,14 +251,59 @@ public class Main {
         } catch (Exception e) {
             System.out.println(e);
         }
-        Ticket.setID(ticketStorage.returnID());
-        Ticket newTicket = new Ticket(newFilm, price, numberOfTicket);
-        ticketStorage.addTicketDBSQL(newTicket);
-        ticketStorage.close(fileName.getFileNameTicket(), path);
+    }
+
+//    public int ageLimitation(int Age, int mat){
+//        int ageLimitation;
+//        if (mat==1){
+//            if (Age<7
+//
+//        } else if (mat==0) {
+//
+//        }
+    public Film changeTicektNumber(String FilmID, FilmStorage filmStorage,int totalNumberTicket, DataBaseConnection dataBaseConnection, TablesSQL tablesSQL ){
+        filmStorage.searchFilm(FilmID, filmStorage.getList()).setTotalofTicket(totalNumberTicket);
+        //String totalTicket = JOptionPane.showInputDialog("FilmID: " + ticketStorageBin.getTicket().getFilm().getFilmID() + " FilmName: " + ticketStorageBin.getTicket().getFilm().getName() + " has " + ticketStorageBin.getTicket().TotalofTicket + " tickets left.\nThe number of the tickets?");
         try {
-            InsertSQLData insertSQLData=new InsertSQLData(dataBaseConnection, tableSQL, newTicket);
+            AlterSQLData alterSQLData=new AlterSQLData(dataBaseConnection,tablesSQL,filmStorage.getFilm());
+            alterSQLData.alterSQLDataFilm(filmStorage.getFilm());
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println(e);};
+        //JOptionPane.showMessageDialog(null, "FilmID: " + ticketStorageBin.getTicket().getFilm().getFilmID() + " FilmName: " + ticketStorageBin.getTicket().getFilm().getName() + " has " + ticketStorageBin.getTicket().TotalofTicket + " tickets left now.");
+        return filmStorage.getFilm();
+    }
+
+    public boolean filmsAvailable(int ageLimitation,String FilmID, FilmStorage filmStorage) {
+        filmStorage.searchFilm(FilmID, filmStorage.getList());
+            if (ageLimitation>=filmStorage.searchFilm(FilmID, filmStorage.getList()).getLimitofage()) {
+                return true;
+            } else {
+                return false;
         }
+    }
+
+    public int AgeLimitation(int age, int mate) {
+        int ageLimitation = 15;
+        if (mate == 1) {
+            if (age < 7) {
+                ageLimitation = 7;
+            } else if (age < 11 && age >= 7) {
+                ageLimitation = 11;
+            }
+        } else if (mate == 0) {
+            if (age < 7) {
+                ageLimitation = 0;
+            } else if (age < 11 && age >= 7) {
+                ageLimitation = 7;
+            } else if (age >= 11 && age < 15) {
+                ageLimitation = 11;
+            }
+        }
+        return ageLimitation;
+    }
+
+
+    public void buyTicket() {
+
     }
 }
