@@ -22,6 +22,6 @@ public class AlterSQLData {
             System.out.println(e);
         }
     }
-    
+
 }
 
